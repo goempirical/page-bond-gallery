@@ -1,0 +1,434 @@
+body {
+  color: $primary;
+  a:hover { text-decoration: none; }
+  ul { list-style: none; padding-left: unset;}
+}
+
+
+
+.row__space__bottom {
+  padding-bottom: 47.5px; 
+}
+
+iframe {
+  width: 100%;
+  height: 570.3px;
+}
+
+.inherit_padding {
+  padding: inherit;
+}
+
+h1 {
+  font-family: $title-font;
+  font-size: 25px; 
+  line-height: 1; 
+  letter-spacing: 0.4px;  
+  color: var(--grey);
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-family: $title-font;
+  font-size: 19px; 
+  line-height: 25px; 
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--grey);
+  margin-bottom: 0px;
+}
+
+.home h1{
+  margin-bottom: 0px;
+}
+
+a {
+  font-size: 16px; 
+  line-height: 21px; 
+  letter-spacing: 0.65px;  
+  color: var(--blue);
+}
+
+p {
+  font-family: $body-font;
+  font-size: 16px; 
+  line-height: 21px; 
+  letter-spacing: 0.65px; 
+  color: var(--grey);
+}
+
+
+
+nav.navbar{ padding: 3rem 1rem;  }
+.navbar-brand { padding: 0; display: grid; margin-bottom: 2px; }
+#navbarNavDropdown { margin-top: 10px; }
+#navbarNavDropdown{
+  justify-content: flex-end;
+  li {
+
+    &:last-child {
+       & > a {
+         padding-right: 0px;
+       }
+    }
+    a {
+      &::after  {
+        content: none;
+      }
+    }
+
+    ul.dropdown-menu {
+      background-color: transparent;
+      border: none;
+      text-transform: uppercase;
+      padding-top: 0px;
+      margin: 0px;
+      li a {
+        padding: 0px 8px;
+
+      }
+    }
+  }
+}
+.navbar-light .navbar-nav .nav-link {
+  font-family: $body-font;
+  font-size: 16px; 
+  line-height: 21px; 
+  letter-spacing: 0.65px; 
+  color: var(--grey);
+}
+.navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle{
+  color: $navbar-light-active-color;
+}
+.navbar-expand-md .navbar-nav .nav-link{
+  padding: 0 11px;
+}
+
+// Style recent news from Home Page 
+section.wrapper-recents {
+  padding-top: 53px;
+  margin: 0px;
+  margin-top: 60px;
+  width: 100%;
+
+  article {
+    padding-left: 0px;
+    
+    &:first-child {
+      margin-right: 70px;
+    }
+    
+    a {
+      color: var(--blue);
+    }
+
+    p {
+      max-width: 392px;
+    }
+  }
+}
+
+.home section.wrapper-recents p {
+  margin-top: 25px;
+}
+
+//  Icon Alter Spaces
+
+.fa:not(:last-of-type) {padding-right: 10px}
+
+// Remove padding side by default
+
+div[class^="col"] {
+  &.no__padding__left { padding-left: 0px } 
+  &.no__padding__right { padding-right: 0px }
+  &.no__padding__both { padding-left: 0px; padding-right: 0px; }
+
+   h2.adding__space, a > p {
+    margin-top: 15px;
+  }
+
+}
+
+.box-stroke {
+  border-top: solid 0.5px var(--grey-active);
+
+  h5 {
+    padding-top: 60px;
+  }
+}
+
+.box-stroke__bottom {
+  border-bottom: solid 0.5px var(--grey-active);
+  
+  &.adding__padding__bottom {
+    padding-bottom: 5px;
+    margin-bottom: 34px;
+  }
+}
+
+.select-range-years {
+    a {
+      color: var(--grey);
+      margin-right: 1rem;
+      
+      &.active {
+        color: var(--grey-active);
+      }
+    }
+}
+
+.entry-content, .box-stroke {
+
+  &.adding__space {
+    margin-top: 34px;
+  }
+
+  &.adding__padding__top{
+    padding-top: 34px;
+  }
+
+}
+
+.menu-side-container {
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 29px;
+    li {
+      margin-bottom: 9px;
+
+      & > a {
+        color: var(--grey); 
+      }
+
+      &.active > a {
+        color: var(--grey-active);
+      }
+
+      &:not(:last-child) {
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+.tab-content, .height_stand {
+  min-height: 300px;
+}
+
+.tab-content {
+  & > #artist_pe {
+    ul > li {
+      &:first-child {
+        margin-top: 42px;
+      }
+       a {
+        h2 { margin-bottom: unset; }
+        &:hover > h2 {color: var(--grey-active);}
+       }
+
+      margin-bottom: 34px;
+    }
+  }
+}
+
+.nav-tabs {
+    border-bottom: none;
+    margin-top: 28px;
+
+      .nav-item {
+        &:last-child {
+          flex-grow: 1;
+          display: flex;
+          justify-content: flex-end;
+          .nav-link {
+            padding-right: 0px;
+            min-width: 50px;
+          }
+        }
+      }
+    
+      .nav-link {
+        color: var(--grey);
+        border: none !important;
+        
+        &.active, &:hover {
+          color: var(--grey-active);
+          border: inherit;
+          background-color: transparent;
+        }
+  
+        &:first-child {
+          padding-left: 0px;
+        }
+  
+      }
+    
+}
+
+
+
+.tab-content > div {
+  margin-top: 16px;
+}
+
+
+
+// Alter styles to Owl Dots 
+.owl-carousel {
+  .owl-counter {
+    position: absolute;
+    right: 0px;
+    bottom: 1%;
+    span {
+      font-size: 25px;
+      &.index_count {
+        color: var(--grey);
+      }
+
+      &.global_count {
+        color: var(--grey-active);
+      }
+    }
+  }
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: var(--grey);
+  
+     button[class^="owl"] {
+       position: absolute;
+       font-size: 50px;
+       outline: none;
+       //width: 35px;
+       //height: 71px;
+       //border: 1px solid #a9a9a9;
+       //background-color: var(--grey-active);
+       
+       span {
+        // display: none;
+       }
+
+       &:hover {
+         color: var(--grey-active);
+       }
+     }
+
+     .owl-prev {
+       left: var(--split-arrow);
+     }
+     .owl-next {
+       right: var(--split-arrow);
+     }
+
+  }
+  .owl-dots {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: 30px;
+    justify-content: flex-end;
+    .owl-dot { 
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      outline: none;
+      background-color: #dddddd;
+      margin: 5px 7px;
+        &.active {
+          background-color: #aaaaaa;
+        }
+    }
+  }
+
+  .owl-item section {
+    margin-top: 10px;
+    p {
+      margin-bottom: 0px;
+    }
+  
+}
+}
+
+.row.space__between > div[class^="col"] {
+  margin-bottom: 30px;
+}
+
+.toggle__content {
+  display: none;
+
+
+  &.active {
+    display: block;
+  }
+}
+
+.head_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 29px;
+
+    .aux_links {
+
+      & > a {
+        color: var(--grey);
+
+        &.active {
+          color: var(--grey-active);
+        }
+        &:hover {
+          color: var(--grey-active);
+        }
+        &:not(:last-child) {
+          padding-right: 12px;
+        }
+      }
+    }
+}
+
+.site-info {
+  row > * {
+    padding-left: 0px;
+  }
+}
+
+.site-main {
+  width: 100%;
+}
+
+footer {
+  &.site-footer p {
+    font-family: $title-font;
+    font-size: 16px;
+    line-height: 21px; 
+    letter-spacing: 0.65px; 
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+
+  .resize_icons {
+      display: flex;
+      justify-content: flex-end; 
+      height: auto;
+    
+      .cont_image {
+      &:not(:last-of-type) {margin-right: 14px}
+     }
+    
+  }
+
+  img#logo_art {
+    width: 123px;
+    float: right;
+    margin-top: 4px;
+  }
+
+}
+
+footer.box-stroke .site-info{
+  margin-top: 22px;
+}
