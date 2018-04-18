@@ -95,7 +95,7 @@ $put_boxStroke = 'box-stroke';
 														<?php $content_member = $member['content']; ?> 
 															<div class="content_member">
 																<h2> <?php echo $content_member['full_name'] ?> </h2>
-																<i> <?php echo $content_member['full_name'] ?> </i>
+																<i> <?php echo $content_member['role'] ?> </i>
 																<?php echo $content_member['description'] ?>															
 															</div>
 
