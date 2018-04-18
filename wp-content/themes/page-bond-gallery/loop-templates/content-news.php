@@ -8,57 +8,56 @@
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
 	<header class="entry-header">
-
-		<pre>
-			<?php $my_content = get_field('news_content');?>
-		</pre>
-
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-		'</a></h2>' ); ?>
-
-		<div> <?php //echo $my_content['news_post_date'] ?> </div> 
+		<?php 
+			the_title( 
+				sprintf( 
+					'<a href="%s" rel="bookmark" ><h2>', 
+					esc_url(get_permalink()) 
+				),
+				'</h2></a>' 
+			); 
+		?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 
 			<div class="entry-meta">
-				<?php echo get_the_date( 'F j, Y' ); //understrap_posted_on(); ?>
+				<?php echo get_the_date( 'F j, Y' ); ?>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
 
 	</header><!-- .entry-header -->
 
-	<?php //echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+<?php 
+	$my_content = get_field('news_content');
+	while ( have_rows('news_content') ) : the_row();
 
-	<?php 
-		if( $my_content['news_post_image'] ) : 
-			foreach ( $my_content as $image ) :
-				echo wp_get_attachment_image($image['ID'], 'full');
-			endforeach;
-		endif;
-	?>
+		$sub_field = get_sub_field('news_post_embed');
+		
+			if ( have_rows('news_post_embed') ) {
+				
+				while ( have_rows('news_post_embed') ) : the_row();
+
+					$layout = get_row_layout();
+
+						if ( $layout === 'select_video' ) { 
+?>
+							<div class="videoWrapper">
+								<?php echo get_sub_field('video'); ?>
+							</div>
+<?php
+						} else {
+							echo  wp_get_attachment_image( get_sub_field('image')['ID'], 'post' );
+						}
+				endwhile;
+			}
+
+	endwhile;
+?>
+				
 
 	<div class="entry-content">
-
-		<?php
-		the_excerpt();
-		?>
-
-		<?php
-	//	wp_link_pages( array(
-	//		'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-	//		'after'  => '</div>',
-	//		) );
-		?>
-
+		<p> <?php echo wp_trim_words(  get_the_content() , 30, '...' ); ?> </p>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
 </article><!-- #post-## -->

@@ -27,7 +27,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								?>
 									<div class="col-md-4">
 										<a href="<?php the_permalink(); ?>">
-											<img src="<?php echo $artist_content['artist_featured_image']['sizes']['medium'] ?>" alt="<?php echo the_title();?>">
+											<img src="<?php echo $artist_content['artist_featured_image']['sizes']['thumbnail'] ?>" alt="<?php echo the_title();?>">
 											<p><?php the_title();?> </p>
 										</a>
 									</div>

@@ -71,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-md-4">
 							<?php	
 								if( $exhibition_content['exhibitions_featured_image'] ) {
-									echo wp_get_attachment_image( $exhibition_content['exhibitions_featured_image'], 'medium' );
+									echo wp_get_attachment_image( $exhibition_content['exhibitions_featured_image'], 'thumbnail' );
 								}
 							?>
 								<a href="<?php the_permalink(); ?>"> <h2 class="adding__space"> <?php the_title();?> </h2> </a> 

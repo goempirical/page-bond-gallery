@@ -27,7 +27,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						foreach( get_field('slides') as $slide ) : ?>
 						<div class="owl-item">
 							<a href="<?php echo $slide['link'] ?>">
-								<?php echo wp_get_attachment_image( $slide['image']['ID'], 'full' ); ?> 
+								<?php //echo wp_get_attachment_image( $slide['image']['ID'], 'slider' ); ?> 
+								<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
 							</a>
 							<section>
 								<a href="<?php echo $slide['link'] ?>">
@@ -46,6 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							/* LIST 2 RECENT POST NEWS */
 						$recent_news = wp_get_recent_posts( array( 'post_type' => 'post', 'numberposts' => 2) );
 					?>
+			<div class="container-fluid">
 			<div class="row justify-content-center">
 				<div class="col-md-10">
 					<section class="row wrapper-recents box-stroke">
@@ -63,7 +65,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						?> 
 					</section>
 				</div>
-			</div>	
+			</div>
+			</div>
 				</main><!-- #main -->
 			</div><!-- #primary -->
 		</div><!-- .row end -->
