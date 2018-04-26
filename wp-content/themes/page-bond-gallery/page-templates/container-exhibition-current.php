@@ -56,7 +56,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									if( $exhibition_content['exhibition_images'] ) : 
 										foreach( $exhibition_content['exhibition_images'] as $image ) : ?>
 										<div class="col-md-4">
-											<?php echo wp_get_attachment_image($image['ID'], 'full'); ?>
+											<?php echo wp_get_attachment_image($image['ID'], 'thumbnail'); ?>
 										</div>
 									<?php	endforeach;
 									endif;

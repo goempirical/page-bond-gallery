@@ -7311,10 +7311,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 })(window.Zepto || window.jQuery, window, document);
 
  
- jQuery(document).ready(function () {
+ jQuery(document).ready( function () {
     var owl = jQuery('.owl-carousel');
     var toggle_artist = jQuery('.toggle_artist');
-    console.log( owl.find('.cloned') )
+
     var stand_obj = {
         items: 1,
         autoplayTimeout: 5000,

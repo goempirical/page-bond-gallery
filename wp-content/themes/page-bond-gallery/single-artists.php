@@ -38,14 +38,14 @@ $container   = get_theme_mod( 'understrap_container_type' );
 												<div class="owl-stage" >
 												<?php 
 													if( $my_artist_content['artist_images'] ) : 
+														
 														foreach( $my_artist_content['artist_images'] as $slide ) : ?>
-															<div class="owl-item">
-																<?php echo wp_get_attachment_image( $slide["artist_image"]['ID'], 'full' ); ?> 
+															<div class="owl-item no__full">
+																<?php echo wp_get_attachment_image( $slide["artist_image"]['ID'], 'medium' ); ?>
 																<section>
-																<?php foreach ( $slide["artist_image_descriptions"] as $image_desc ):  ?>
-																	<p> <?php echo $image_desc["artist_image_description"] ?> </p>
-																<?php endforeach; ?>
-																</section>
+																	<p> <?php echo $slide['content']['artist_info_title'] ?> </p>
+																	<p> <?php echo $slide['content']['artist_info_title_sec'] ?> </p>
+																</section> 
 															</div>
 														<?php 
 														endforeach;
@@ -64,7 +64,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 										if( $my_artist_content['artist_images'] ) : 
 											foreach( $my_artist_content['artist_images'] as $slide ) : ?>
 												<div class="col-md-4"> 
-													<img src="<?php echo $slide['artist_image']['sizes']['medium'] ?>">
+													<img src="<?php echo $slide['artist_image']['sizes']['thumbnail'] ?>">
 												</div>
 											<?php 
 											endforeach;

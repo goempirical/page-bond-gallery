@@ -24,7 +24,13 @@ $container  = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
+		<div class="row justify-content-center">
+
+			<div class="col-md-10">
+			
+			<div class="aux_content box-stroke adding__space adding__padding__top">
+			
+			<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
@@ -58,14 +64,36 @@ $container  = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
-
+			<?php 
+			$args = array(
+				'base'               => '%_%',
+				'format'             => '?paged=%#%',
+				'total'              => 1,
+				'current'            => 0,
+				'show_all'           => false,
+				'end_size'           => 1,
+				'mid_size'           => 2,
+				'prev_next'          => true,
+				'prev_text'          => __('< Previous'),
+				'next_text'          => __('Next >'),
+				'type'               => 'plain',
+				'add_args'           => false,
+				'add_fragment'       => '',
+				'before_page_number' => '',
+				'after_page_number'  => ''
+			);
+			
+			understrap_pagination($args); 
+		 
+				//wp_link_pages( $defaults );?>
+			
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
 		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
-		
-
+				</div>
+			</div>
+		</div> <!-- .col-md-10 -->
 	</div><!-- .row -->
 
 </div><!-- Container end -->

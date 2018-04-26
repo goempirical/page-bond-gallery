@@ -40,9 +40,6 @@ function query_range_years( $vars ) {
 
 add_filter('query_vars', 'query_range_years');
 
-include 'custom-post-types/index.php';
-include 'taxonomies/index.php';
-
 // Add support to files upload SVG
 function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
@@ -58,3 +55,11 @@ function nav_class_active ($classes, $item) {
     }
     return $classes;
 }
+
+//Adding another image size for gallery
+add_image_size( 'slider', 1200, 645, true);
+add_image_size( 'post', 732, 383, true);
+
+
+include 'custom-post-types/index.php';
+include 'taxonomies/index.php';

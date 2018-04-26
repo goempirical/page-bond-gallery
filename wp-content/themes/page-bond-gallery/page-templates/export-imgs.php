@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Container Artists
+ * Template Name: Export Imgs
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
@@ -21,19 +21,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="box-stroke adding__padding__top">
 							<div class="row">
 								<?php 
-									$query_artists = new WP_Query(array('post_type' => 'artists', 'order' =>  'ASC'));
-									while ($query_artists->have_posts()) : $query_artists->the_post(); 
-										$artist_content = get_field('artist_content');
-								?>
-									<div class="col-md-4">
-										<a href="<?php the_permalink(); ?>">
-											<img src="<?php echo $artist_content['artist_featured_image']['sizes']['thumbnail'] ?>" alt="<?php echo the_title();?>">
-											<p><?php the_title();?> </p>
-										</a>
-									</div>
-								<?php 
+									$img_r = array();
+									$query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC'));
+									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
+										$file_name = explode('/2018/04/', $post->guid);
+										$img_r[$post->ID] = $file_name[1];
 									endwhile; 
 									wp_reset_query(); //Reset to post parent
+
+									echo '<pre>';
+									print_r($img_r);
+									echo '</pre>';
 								?>
 							</div>
 							</div>
