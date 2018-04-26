@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="row">
 								<?php 
 									$img_r = array();
-									$query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC'));
+									$query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
 									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
 										$file_name = explode('/2018/04/', $post->guid);
 										$img_r[$post->ID] = $file_name[1];
