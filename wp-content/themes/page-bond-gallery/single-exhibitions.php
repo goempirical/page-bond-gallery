@@ -19,36 +19,62 @@ $container = get_theme_mod( 'understrap_container_type' );
 								while ( have_posts() ) : the_post();
 									$exhibition_content = get_field('exhibition_content'); 
 							?>
-							<div class="col-md-10">
+							<div class="col-md-11 grid-container">
 								<div class="row">
 									<div class="col-md-12">
-										<div class="head_content box-stroke__bottom">
+										<div id="gallery-title" class="head_content box-stroke__bottom">
 											<div>
-											<h1><?php echo the_title();?></h1>
+												<h1><?php echo the_title();?></h1>
 												<div><?php echo $exhibition_content['date_text'];?></div> 
 											</div>
 												
-												<div class="aux_links" >
-												<a href="/artists">Back to Artists</a>
-												</div>
+											<div class="aux_links" >
+												<a href="#" class="toggle_artist">Gallery</a>
+												<a href="<?php echo site_url(); ?>/past">Back to Exhibitions</a>
 											</div>
+										</div>
 									</div>
 								</div>
-									
-								<div class="row space__between">
-									
-									<?php 
-									if( $exhibition_content['exhibition_images'] ) : 
-										foreach( $exhibition_content['exhibition_images'] as $image ) : ?>
-										<div class="col-md-4">
-											<?php echo wp_get_attachment_image($image['ID'], 'thumbnail'); ?>
-										</div>
-									<?php	endforeach;
-									endif;
+							<?php
 									endwhile; 
 							?>
-									
+
+								<div class="toggle__content">
+									<div class="owl-carousel next owl-theme owl-loaded">
+										<div class="owl-stage-outer">
+											<div class="owl-stage" >
+											<?php 
+												if( $exhibition_content['exhibition_images'] ) : 
+													foreach( $exhibition_content['exhibition_images'] as $slide ) : ?>
+														<div class="owl-item no__full">
+															<?php echo wp_get_attachment_image( $slide['ID'], 'medium' ); ?>
+														</div>
+														<section>
+															<p> <?php echo $slide['content']['artist_info_title'] ?> </p>
+															<p> <?php echo $slide['content']['artist_info_title_sec'] ?> </p>
+														</section> 
+													<?php 
+													endforeach;
+												endif; ?>
+											</div>
+										</div>
+										<div class="owl-counter" > 
+											<span class="index_count">...</span><span class="global_count">...</span> 
+										</div>
+									</div>  <!-- END OWL-CAROUSEL -->
 								</div>
+								<div class="toggle__content active">
+									<div class="row">			
+									<?php 
+										if( $exhibition_content['exhibition_images'] ) : 
+													foreach( $exhibition_content['exhibition_images'] as $slide ) : ?>
+												<div class="col-md-4 grid-item"> 
+													<a href="#" class="gallery-image"><img src="<?php echo $slide['sizes']['thumbnail'] ?>"></a>
+												</div>
+											<?php 
+											endforeach;
+										endif; ?>
+										</div>	
 						</div>
 					</div>
 
