@@ -9876,23 +9876,21 @@ nav.navbar {
   padding-bottom: 55%; }
 
 .home .banner-info {
-  margin-top: 8px; }
+  margin-top: 8px;
+  margin-bottom: 60px; }
   .home .banner-info a {
     color: var(--grey); }
 
 section.wrapper-recents {
-  padding-top: 53px;
-  margin: 0px;
-  margin-top: 60px;
-  width: 100%; }
-  section.wrapper-recents article {
-    padding-left: 0px; }
-    section.wrapper-recents article:first-child {
-      margin-right: 70px; }
-    section.wrapper-recents article a {
-      color: var(--blue); }
-    section.wrapper-recents article p {
-      max-width: 392px; }
+  margin-top: 53px; }
+  section.wrapper-recents article a {
+    color: var(--blue); }
+    section.wrapper-recents article a:before {
+      content: '\2014';
+      display: block;
+      color: #262626; }
+  section.wrapper-recents article p {
+    max-width: 392px; }
 
 .home section.wrapper-recents p {
   margin-top: 25px; }
