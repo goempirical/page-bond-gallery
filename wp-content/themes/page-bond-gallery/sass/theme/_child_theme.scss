@@ -166,7 +166,7 @@ nav.navbar{ padding: 3rem 1rem;  }
   align-items: baseline;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $bp-large) {
   .container {
     max-width: 1190px; 
   } 
@@ -189,6 +189,7 @@ nav.navbar{ padding: 3rem 1rem;  }
 
   .banner-info {
     margin-top:8px;
+    margin-bottom:60px;
 
     a {
       color:var(--grey);
@@ -197,20 +198,19 @@ nav.navbar{ padding: 3rem 1rem;  }
 }
 
 section.wrapper-recents {
-  padding-top: 53px;
-  margin: 0px;
-  margin-top: 60px;
-  width: 100%;
+  margin-top: 53px;
 
   article {
-    padding-left: 0px;
-    
-    &:first-child {
-      margin-right: 70px;
-    }
-    
+
+
     a {
       color: var(--blue);
+
+      &:before {
+        content: '\2014';
+        display: block;
+        color: $grey-color;
+      }
     }
 
     p {
@@ -660,7 +660,7 @@ article.post {
     overflow: hidden;  
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-med) {
   .grid-container,
   .main-content-area {
     padding-right: 20px;
@@ -689,7 +689,7 @@ article.post {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $bp-large) {
   .grid-container,
   .main-content-area {
     padding-right: 40px;

@@ -54,13 +54,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 					/* LIST 2 RECENT POST NEWS */
 				$recent_news = wp_get_recent_posts( array( 'post_type' => 'post', 'numberposts' => 2) );
 			?>
-			<div class="container-fluid">
 			<div class="row justify-content-center">
-				<div class="col-md-10">
-					<section class="row wrapper-recents box-stroke">
+				<div class="col-md-11 main-content-area">
+
+					<div class="box-stroke"></div>
+					<section class="row wrapper-recents">
 						
 						<?php foreach( $recent_news as $new ) :  ?>
-							<article class="col-md-5">
+							<article class="col-md-6 grid-item">
 								<h1><?php echo $new['post_title']?></h2>
 								<h2> <?php echo get_the_date( 'F j, Y', $new["ID"] );?>	 </h4>
 								<p><?php echo wp_trim_words( $new['post_content'], 20, '...' ); ?></p>
@@ -72,7 +73,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						?> 
 					</section>
 				</div>
-			</div>
 			</div>
 				</main><!-- #main -->
 			</div><!-- #primary -->
