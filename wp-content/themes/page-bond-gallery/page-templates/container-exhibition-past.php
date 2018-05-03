@@ -88,7 +88,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								
 							$exhibition_content = get_field('exhibition_content'); ?>
 							<div class="col-md-4 grid-item">
-								<a href="<?php the_permalink(); ?>"> <h2 class="adding__space">
+								<a href="<?php the_permalink(); ?>">
 									<div class="img-wrap">
 									<?php	
 									if( $exhibition_content['exhibitions_featured_image'] ) {
@@ -96,7 +96,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									}
 									?>
 									</div>
-									<?php the_title();?> </h2> 
+									<h2 class="adding__space"><?php the_title();?> </h2> 
 									<p><?php echo $exhibition_content['date_text'];?></p>
 								</a>
 							</div>

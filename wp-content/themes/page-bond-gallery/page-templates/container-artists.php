@@ -21,7 +21,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="box-stroke adding__padding__top">
 							<div class="row">
 								<?php 
-									$query_artists = new WP_Query(array('post_type' => 'artists', 'order' =>  'ASC', 'posts_per_page' => 9));
+									$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+									$query_artists = new WP_Query(array('post_type' => 'artists', 'order' =>  'ASC', 'orderby' => 'title', 'posts_per_page' => 9, 'paged' => $paged ));
 									while ($query_artists->have_posts()) : $query_artists->the_post(); 
 										$artist_content = get_field('artist_content');
 								?>
@@ -34,6 +35,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 										</a>
 									</div>
 								<?php 
+									previous_posts_link( 'Newer posts &raquo;' );
+									next_posts_link('Older &raquo;');
 									endwhile; 
 									wp_reset_query(); //Reset to post parent
 								?>
