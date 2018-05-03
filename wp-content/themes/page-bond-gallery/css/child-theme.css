@@ -9771,6 +9771,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p,
 li,
 .owl-counter {
@@ -9790,19 +9791,25 @@ h2 {
   font-family: "Omnes Light";
   font-size: 19px;
   line-height: 25px;
-  text-transform: uppercase;
   letter-spacing: 0.6px;
   color: var(--grey);
   margin-bottom: 0px; }
 
-h3, h4 {
+h3, h4, h5, h6 {
   letter-spacing: 0.6px; }
 
 .head_content h4 {
   text-transform: uppercase; }
 
+h1.gallery-title {
+  text-transform: uppercase;
+  margin-bottom: 8px; }
+  h1.gallery-title + p {
+    margin-bottom: 10px; }
+
 .home h1 {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  text-transform: uppercase; }
 
 a {
   font-size: 16px;
@@ -9832,13 +9839,14 @@ nav.navbar {
   #navbarNavDropdown li a::after {
     content: none; }
   #navbarNavDropdown li ul.dropdown-menu {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
     text-transform: uppercase;
-    padding-top: 0px;
-    margin: 0px; }
+    padding-top: 8px;
+    margin: 0px;
+    border-radius: 0; }
     #navbarNavDropdown li ul.dropdown-menu li a {
-      padding: 0px 8px; }
+      padding: 0px 11px; }
 
 .navbar-light .navbar-nav .nav-link {
   font-family: "Omnes Light";
@@ -9852,7 +9860,7 @@ nav.navbar {
 
 .navbar-expand-md .navbar-nav .nav-link {
   padding: 0 11px;
-  line-height: 1;
+  line-height: 1.125;
   vertical-align: baseline;
   padding-top: 24px; }
 
@@ -10139,6 +10147,9 @@ article.post:not(:last-child) {
     .head_content .aux_links > a:not(:last-child) {
       padding-right: 12px; }
 
+.aux_links {
+  margin-bottom: 9px; }
+
 .site-info row > * {
   padding-left: 0px; }
 
@@ -10158,7 +10169,8 @@ article.post:not(:last-child) {
       max-width: none;
       width: 100%; }
   .grid-item h2 {
-    margin-top: 12px; }
+    margin-top: 12px;
+    text-transform: uppercase; }
   .grid-item a {
     color: var(--grey); }
   .grid-item p {

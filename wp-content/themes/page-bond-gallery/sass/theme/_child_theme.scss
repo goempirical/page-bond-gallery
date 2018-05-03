@@ -58,6 +58,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p,
 li,
 .owl-counter {
@@ -78,24 +79,35 @@ h1 {
 h2 {
   font-family: $title-font;
   font-size: 19px; 
-  line-height: 25px; 
-  text-transform: uppercase;
+  line-height: 25px;
   letter-spacing: 0.6px;
   color: var(--grey);
   margin-bottom: 0px;
 }
 
-h3, h4 {
+h3, h4, h5, h6 {
   letter-spacing: 0.6px;
 }
 
-.head_content h4 {
+.head_content h4{
   text-transform: uppercase;
+}
+
+h1.gallery-title {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  & + p {
+    margin-bottom: 10px;
+  }
 }
 
 .home h1{
   margin-bottom: 0px;
+  text-transform: uppercase;
 }
+
+
 
 a {
   font-size: 16px; 
@@ -112,19 +124,24 @@ p {
   color: var(--grey);
 }
 
+nav.navbar{ 
+  padding: 3rem 1rem; 
+}
 
+.navbar-brand { 
+  padding: 0; display: grid; margin-bottom: 2px; 
+}
 
-nav.navbar{ padding: 3rem 1rem;  }
-.navbar-brand { padding: 0; display: grid; margin-bottom: 2px; }
-#navbarNavDropdown{
+#navbarNavDropdown {
   justify-content: flex-end;
-  li {
 
+  li {
     &:last-child {
        & > a {
          padding-right: 0px;
        }
     }
+
     a {
       &::after  {
         content: none;
@@ -132,18 +149,20 @@ nav.navbar{ padding: 3rem 1rem;  }
     }
 
     ul.dropdown-menu {
-      background-color: transparent;
+      background-color: rgba(255,255,255,.7);
       border: none;
       text-transform: uppercase;
-      padding-top: 0px;
+      padding-top: 8px;
       margin: 0px;
-      li a {
-        padding: 0px 8px;
+      border-radius: 0;
 
+      li a {
+        padding: 0px 11px;
       }
     }
   }
 }
+
 .navbar-light .navbar-nav .nav-link {
   font-family: $body-font;
   font-size: 16px; 
@@ -151,12 +170,14 @@ nav.navbar{ padding: 3rem 1rem;  }
   letter-spacing: 0.65px; 
   color: var(--grey);
 }
-.navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle{
+
+.navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle {
   color: $navbar-light-active-color;
 }
+
 .navbar-expand-md .navbar-nav .nav-link{
   padding: 0 11px;
-  line-height: 1;
+  line-height: 1.125;
   vertical-align: baseline;
   padding-top: 24px;
 }
@@ -616,6 +637,10 @@ article.post {
     }
 }
 
+.aux_links {
+  margin-bottom: 9px;
+}
+
 .site-info {
   row > * {
     padding-left: 0px;
@@ -645,6 +670,7 @@ article.post {
 
   h2 {
     margin-top:12px;
+    text-transform: uppercase;
   }
 
   a {
