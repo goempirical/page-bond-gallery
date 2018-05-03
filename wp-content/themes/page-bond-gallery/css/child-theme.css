@@ -9917,7 +9917,7 @@ div[class^="col"] .content.full__img > img {
   max-width: initial;
   width: 100%; }
 
-div[class^="col"] h2.adding__space, div[class^="col"] a > p {
+div[class^="col"] h2.adding__space {
   margin-top: 15px; }
 
 div[class^="col"] .content_member h2 {
@@ -10151,15 +10151,20 @@ article.post:not(:last-child) {
     position: relative;
     height: 0;
     padding-bottom: 67.11%;
-    background: #fafafa; }
+    background: #fafafa;
+    overflow: auto; }
     .grid-item .img-wrap img {
       position: absolute;
       top: 0;
-      left: 0; }
+      left: 0;
+      max-width: none;
+      width: 100%; }
   .grid-item h2 {
     margin-top: 12px; }
   .grid-item a {
     color: var(--grey); }
+  .grid-item p {
+    margin: 4px 0 0; }
 
 .content-area {
   overflow: hidden; }

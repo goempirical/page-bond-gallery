@@ -241,7 +241,7 @@ div[class^="col"] {
     width: 100%;
   }
 
-   h2.adding__space, a > p {
+   h2.adding__space {
     margin-top: 15px;
   }
 
@@ -632,11 +632,14 @@ article.post {
     height: 0;
     padding-bottom: 67.11%;
     background: #fafafa;
+    overflow: auto;
 
     img {
       position: absolute;
       top: 0;
       left: 0;
+      max-width: none;
+      width: 100%;
     }
   }
 
@@ -646,6 +649,10 @@ article.post {
 
   a {
     color: var(--grey);
+  }
+
+  p {
+    margin: 4px 0 0;
   }
 }
 
