@@ -19,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row justify-content-center">
 
-			<div class="col-md-10">
+			<div class="col-md-11 footer-inner">
 
 				<footer class="site-footer box-stroke" id="colophon">
 
@@ -33,15 +33,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<div class="row justify-content-end">
 										<div class="col-md-12 text-right">
 											<div class="resize_icons">
-												<div class="cont_image"><a href="#"><img src="/wp-content/themes/page-bond-gallery/img/footer/fill-8.png" alt="Unknown"></a></div>
-												<div class="cont_image"><a href="#"><img src="/wp-content/themes/page-bond-gallery/img/footer/fill-4.png" alt="Facebook"></a></div>
-												<div class="cont_image"><a href="#"><img src="/wp-content/themes/page-bond-gallery/img/footer/instagram-icon.png" alt="Twitter"></a></div>
-												<div class="cont_image"><a href="#"><img src="/wp-content/themes/page-bond-gallery/img/footer/fill-6.png" alt="Pinterest"></a></div>
-												<div class="cont_image"><a href="#"><img src="/wp-content/themes/page-bond-gallery/img/footer/fill-2.png" alt="Twitter"></a></div>
+												<div class="cont_image"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/footer/fill-8.png" alt="Unknown"></a></div>
+												<div class="cont_image"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/footer/fill-4.png" alt="Facebook"></a></div>
+												<div class="cont_image"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/footer/instagram-icon.png" alt="Twitter"></a></div>
+												<div class="cont_image"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/footer/fill-6.png" alt="Pinterest"></a></div>
+												<div class="cont_image"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/footer/fill-2.png" alt="Twitter"></a></div>
 											</div>
 										</div>
 										<div class="col-md-12">
-												<img src="/wp-content/themes/page-bond-gallery/img/footer/image-18@3x.png" id="logo_art" alt="ArtLab">
+												<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/footer/image-18@3x.png" id="logo_art" alt="ArtLab">
 										</div>
 									</div>
 								</div>

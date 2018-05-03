@@ -14,13 +14,21 @@
 
 $body-font: 'Omnes Light';
 $title-font: 'Omnes Light';
-$grey-color:  #666666;
+$grey-color:  #262626;
+$grey-dark:  #4d4d4d;
+$grey-active:  #999999;
+
+
+$bp-large: 1200px;
+$bp-med: 992px;
+
+$anim-dur: 2s;
 
 :root {
-    --grey-dark: #4d4d4d;
-    --blue: #0033cc;
+    --grey-dark: $grey-dark;
+    --blue: #003399;
     --grey: $grey-color;
-    --grey-active: #a9a9a9;
+    --grey-active: #999999;
     --white: #ffffff;
     --split-arrow: -70px;
 }

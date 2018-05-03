@@ -17,36 +17,43 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-12 content-area" id="primary">
 			 <main class="site-main" id="main" role="main">
 
-
 				<div class="owl-carousel owl-theme owl-loaded">
 					<div class="owl-stage-outer">
 						<div class="owl-stage" >
 						<?php 
 						/* HEADER EXHIBITION MANUAL  */
+						$link = get_field('link') ? get_field('link') : false;
 						if( get_field('slides') ) : 
 						foreach( get_field('slides') as $slide ) : ?>
 						<div class="owl-item">
-							<a href="<?php echo $slide['link'] ?>">
-								<?php //echo wp_get_attachment_image( $slide['image']['ID'], 'slider' ); ?> 
+							<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
 								<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
-							</a>
-							<section>
-								<a href="<?php echo $slide['link'] ?>">
-									<h1><?php echo $slide['slider_info']['slider_info_title'] ?></h1>
-								</a>
-								<h2><?php echo $slide['slider_info']['slider_info_date_text'] ?></h2>
-							</section>
-						  </div>
+							<?php echo $link ? '</a>' : ''; ?> 
+						</div>
 						<?php 
 						endforeach;
-						endif; ?>
-						</div>
+						endif;
+						?>
 					</div>
 				</div>
-					<?php
-							/* LIST 2 RECENT POST NEWS */
-						$recent_news = wp_get_recent_posts( array( 'post_type' => 'post', 'numberposts' => 2) );
-					?>
+			</div>
+				<?php
+					$group = get_field('exhibit_info');
+					if( get_field('exhibit_info') ) : 
+				?>
+				<section class="banner-info">
+					<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
+						<h1><?php echo $group['info_title'] ?></h1>
+					<?php echo $link ? '</a>' : ''; ?>
+					<h2><?php echo $group['info_date_text'] ?></h2>
+				</section>
+				<?php 
+					endif;
+				?>
+			<?php
+					/* LIST 2 RECENT POST NEWS */
+				$recent_news = wp_get_recent_posts( array( 'post_type' => 'post', 'numberposts' => 2) );
+			?>
 			<div class="container-fluid">
 			<div class="row justify-content-center">
 				<div class="col-md-10">
