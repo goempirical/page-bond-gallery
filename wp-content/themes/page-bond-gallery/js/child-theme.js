@@ -7326,6 +7326,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
         margin: 200,
         autoHeight: false,
         smartSpeed: 1000,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     };
         
     if ( owl.length === 0 ) return;
@@ -7365,7 +7367,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
         $self.toggleClass('active')
         
         $self.text(( $self.hasClass('active') ) ? 
-                    'Gallery' : 'Thumbnails');
+                    'Thumbnails' : 'Slideshow');
         jQuery(content[0]).toggleClass('active');
         jQuery(content[1]).toggleClass('active');
     });

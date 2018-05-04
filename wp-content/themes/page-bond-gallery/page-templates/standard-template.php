@@ -37,7 +37,7 @@ $put_boxStroke = 'box-stroke';
 								<?php endif;?>
 								<?php /* GALLERY STANDARD */ ?> 
 									<div class="content full__img <?php echo $put_boxStroke; ?> adding__space adding__padding__top">
-									<?php $gallery_stand = get_field('gallery_standard'); $size = 'slider';?>
+									<?php $gallery_stand = get_field('page_image_gallery'); $size = 'slider';?>
 									
 									<?php if ( $gallery_stand ) :  ?>
 												
@@ -47,14 +47,13 @@ $put_boxStroke = 'box-stroke';
 										<div class="owl-carousel next owl-theme owl-loaded">
 											<div class="owl-stage-outer">
 												<div class="owl-stage" >
-													<?php foreach( $gallery_stand as $image_standard  ) : ?>
+													<?php foreach( $gallery_stand as $slide  ) : ?>
 														<div class="owl-item no__full">
-															<?php echo wp_get_attachment_image($image_standard['image']['ID'], $size); ?>
-															<section>
-																<?php $aux_description = $image_standard['content']; ?>
-																<p> <?php echo $aux_description['title_primary'] ?> </p>
-																<p><?php echo $aux_description['place'] ?> </p>	
-															</section>
+															<?php echo wp_get_attachment_image( $slide['ID'], $size ); ?>
+															<?php
+																$info = get_field('information', $slide['ID']);
+																echo $info ? '<section>' . $info . '</section>' : '';
+															?>  
 														</div>
 													<?php endforeach; ?>
 												</div>

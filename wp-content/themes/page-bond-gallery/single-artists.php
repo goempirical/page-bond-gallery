@@ -24,7 +24,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 										<div id="gallery-title" class="head_content box-stroke__bottom">
 												<h4><?php echo the_title();?></h4>
 												<div class="aux_links" >
-													<a href="#" class="toggle_artist">Gallery</a>
+													<a href="#" class="toggle_artist">Slideshow</a>
 													<a href="<?php echo site_url(); ?>/artists">Back to Artists</a>
 												</div>
 											</div>
@@ -37,14 +37,17 @@ $container   = get_theme_mod( 'understrap_container_type' );
 										<div class="owl-stage-outer">
 											<div class="owl-stage" >
 											<?php 
-												if( $my_artist_content['artist_images'] ) : 
+												if( $my_artist_content['artist_image_gallery'] ) : 
 													
-													foreach( $my_artist_content['artist_images'] as $slide ) : ?>
+													foreach( $my_artist_content['artist_image_gallery'] as $slide ) : ?>
 														<div class="owl-item no__full">
-															<?php echo wp_get_attachment_image( $slide["artist_image"]['ID'], 'medium' ); ?>
+															<?php echo wp_get_attachment_image( $slide['ID'], 'slider' ); ?>
 															<section>
-																<p> <?php echo $slide['content']['artist_info_title'] ?> </p>
-																<p> <?php echo $slide['content']['artist_info_title_sec'] ?> </p>
+																<?php
+																	$info = get_field('information', $slide['ID']);
+																	echo $info ? $info : '';
+																?> 
+																<?php if(!get_field('hide_inquire_link', $slide['ID'])){ echo '<p><a href="#">INQUIRE &gt;</a></p>'; }?>
 															</section> 
 														</div>
 													<?php 
@@ -60,10 +63,10 @@ $container   = get_theme_mod( 'understrap_container_type' );
 								<div class="toggle__content active">
 									<div class="row">			
 									<?php 
-										if( $my_artist_content['artist_images'] ) : 
-											foreach( $my_artist_content['artist_images'] as $slide ) : ?>
+										if( $my_artist_content['artist_image_gallery'] ) : 
+											foreach( $my_artist_content['artist_image_gallery'] as $slide ) : ?>
 												<div class="col-md-4 grid-item"> 
-													<a href="#" class="gallery-image"><img src="<?php echo $slide['artist_image']['sizes']['thumbnail'] ?>"></a>
+													<a href="#" class="gallery-image"><img src="<?php echo $slide['sizes']['thumbnail'] ?>"></a>
 												</div>
 											<?php 
 											endforeach;
@@ -95,16 +98,11 @@ $container   = get_theme_mod( 'understrap_container_type' );
 												<li class="nav-item">
 													<a class="nav-link " id="artist_pe_tab" data-toggle="tab" href="#artist_pe" role="tab" aria-controls="artist_pe" aria-selected="false">Past Exhibitions</a>
 												</li>
-												<li class="nav-item text-right">
+												<?php if($my_artist_content['artist_cv_file']){ ?>
+												<li class="nav-item text-right flex-right">
 													<a class="nav-link" href="<?php echo $my_artist_content['artist_cv_file'];?>" download>Download CV</a>
 												</li>
-											</ul>
-										</div> <!-- END COL -->
-
-										<div class="col-md-0 no__padding__left">
-											<ul class="nav nav-tabs box-stroke justify-content-end">
-												<!-- DOWNLOAD CV	 -->
-										
+												<?php } ?>
 											</ul>
 										</div> <!-- END COL -->
 									</div> <!-- END ROW -->
