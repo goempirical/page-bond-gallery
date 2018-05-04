@@ -1,7 +1,8 @@
 body {
-  color: $primary;
+  color: $grey-color;
   a:hover { text-decoration: none; }
   ul { list-style: none; padding-left: unset;}
+  letter-spacing: .65px;
 }
 
 .row__space__bottom {
@@ -42,7 +43,7 @@ iframe {
 .pagination .page-link.next {
   border: 0 none !important;
   padding: 0;
-  color: var(--grey);
+  color: $grey-color;
 }
 .pagination .page-link.previous:hover,
 .pagination .page-link.next:hover {
@@ -61,7 +62,8 @@ h5,
 h6,
 p,
 li,
-.owl-counter {
+.owl-counter,
+.aux_links a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -72,7 +74,7 @@ h1 {
   font-size: 25px; 
   line-height: 1; 
   letter-spacing: 0.6px;  
-  color: var(--grey);
+  color: $grey-headings;
   margin-bottom: 0px;
 }
 
@@ -81,8 +83,12 @@ h2 {
   font-size: 19px; 
   line-height: 25px;
   letter-spacing: 0.6px;
-  color: var(--grey);
+  color: $grey-headings;
   margin-bottom: 0px;
+}
+
+h3, h4 {
+  color: $grey-headings;
 }
 
 h3, h4, h5, h6 {
@@ -113,7 +119,7 @@ a {
   font-size: 16px; 
   line-height: 21px; 
   letter-spacing: 0.65px;  
-  color: var(--blue);
+  color: $blue;
 }
 
 p {
@@ -121,7 +127,7 @@ p {
   font-size: 16px; 
   line-height: 21px; 
   letter-spacing: 0.65px; 
-  color: var(--grey);
+  color: $grey-color;
 }
 
 nav.navbar{ 
@@ -168,7 +174,7 @@ nav.navbar{
   font-size: 16px; 
   line-height: 21px; 
   letter-spacing: 0.65px; 
-  color: var(--grey);
+  color: $grey-color;
 }
 
 .navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle {
@@ -195,14 +201,6 @@ nav.navbar{
 
 /* Home Page */
 .home {
-  nav.navbar {
-    padding-bottom: 2rem;
-  }
-
-  .wrapper {
-    padding-top: 0;
-  }
-
   .owl-carousel .owl-stage-outer {
     height: 0;
     padding-bottom: 55%;
@@ -213,7 +211,7 @@ nav.navbar{
     margin-bottom:60px;
 
     a {
-      color:var(--grey);
+      color:$grey-color;
     }
   }
 }
@@ -225,7 +223,7 @@ section.wrapper-recents {
 
 
     a {
-      color: var(--blue);
+      color: $blue;
 
       &:before {
         content: '\2014';
@@ -279,7 +277,7 @@ div[class^="col"] {
 }
 
 .box-stroke {
-  border-top: solid 0.5px var(--grey-active);
+  border-top: solid 0.5px $grey-border;
 
   h5 {
     padding-top: 60px;
@@ -287,7 +285,7 @@ div[class^="col"] {
 }
 
 .box-stroke__bottom {
-  border-bottom: solid 0.5px var(--grey-active);
+  border-bottom: solid 0.5px $grey-border;
   
   &.adding__padding__bottom {
     padding-bottom: 5px;
@@ -297,11 +295,11 @@ div[class^="col"] {
 
 .select-range-years {
     a {
-      color: var(--grey);
+      color: $grey-color;
       margin-right: 1rem;
       
       &.active {
-        color: var(--grey-active);
+        color: $grey-active;
       }
     }
 }
@@ -328,11 +326,11 @@ div[class^="col"] {
       margin-bottom: 9px;
 
       & > a {
-        color: var(--grey); 
+        color: $grey-color; 
       }
 
       &.active > a {
-        color: var(--grey-active);
+        color: $grey-active;
       }
 
       &:not(:last-child) {
@@ -353,9 +351,10 @@ div[class^="col"] {
         h2 { 
           margin-bottom: unset;
           color: $grey-color;
+          text-transform: uppercase;
         }
         &:hover > h2 {
-          color: var(--grey-active);
+          color: $grey-active;
         }
       }
 
@@ -368,34 +367,34 @@ div[class^="col"] {
     border-bottom: none;
     margin-top: 28px;
 
-      .nav-item {
-        &:last-child {
-          flex-grow: 1;
-          display: flex;
-          justify-content: flex-end;
-          .nav-link {
-            padding-right: 0px;
-            min-width: 50px;
-          }
+    .nav-item {
+      &.flex-right {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        .nav-link {
+          padding-right: 0px;
+          min-width: 50px;
         }
       }
-    
-      .nav-link {
-        color: var(--grey);
-        border: none !important;
-        
-        &.active, &:hover {
-          color: var(--grey-active);
-          border: inherit;
-          background-color: transparent;
-        }
+    }
   
-        &:first-child {
-          padding-left: 0px;
-        }
-  
+    .nav-link {
+      color: $grey-color;
+      border: none !important;
+      padding-right: 1.5em;
+      
+      &.active, &:hover {
+        color: $grey-active;
+        border: inherit;
+        background-color: transparent;
       }
-    
+
+      &:first-child {
+        padding-left: 0px;
+      }
+    }
 }
 
 .widget-area {
@@ -415,7 +414,7 @@ div[class^="col"] {
 
           input {
             text-transform: uppercase;
-            border: solid 0.7px var(--grey-active);
+            border: solid 0.7px $grey-border;
             border-radius: 0px;
             border-right: none;
 
@@ -431,7 +430,7 @@ div[class^="col"] {
               background: transparent;
               color: transparent;
               border-left-color: transparent;
-              border-right: solid 0.7px var(--grey-active);
+              border-right: solid 0.7px $grey-border;
             }
           
           }
@@ -447,7 +446,7 @@ div[class^="col"] {
       ul {
         margin-bottom: 72px;
         li > a {
-          color: var(--grey);
+          color: $grey-color;
           font-size: 16px;
         }
 
@@ -471,7 +470,7 @@ article.post {
   }
 
   &:not(:last-child) {
-    border-bottom: solid 0.5px var(--grey-active);
+    border-bottom: solid 0.5px $grey-border;
     margin-bottom: 65px;
   }
   
@@ -481,20 +480,30 @@ article.post {
   margin-top: 16px;
 }
 
-// Alter styles to Owl Dots 
+#artist_li a {
+  color: $grey-color;
+
+  &:hover {
+    color:$grey-active;
+  }
+}
+
 .owl-carousel {
   .owl-counter {
     position: absolute;
     right: 0px;
-    bottom: 1%;
+    bottom: 0;
+    line-height: 1;
+
     span {
       font-size: 25px;
+
       &.index_count {
-        color: var(--grey);
+        color: $grey-color;
       }
 
       &.global_count {
-        color: var(--grey-active);
+        color: $grey-active;
       }
     }
   }
@@ -502,7 +511,7 @@ article.post {
     position: absolute;
     top: 35%;
     width: 100%;
-    color: var(--grey);
+    color: $grey-color;
   
     button[class^="owl"] {
        position: absolute;
@@ -511,14 +520,14 @@ article.post {
        //width: 35px;
        //height: 71px;
        //border: 1px solid #a9a9a9;
-       //background-color: var(--grey-active);
+       //background-color: $grey-active;
        
        span {
         // display: none;
        }
 
        &:hover {
-         color: var(--grey-active);
+         color: $grey-active;
        }
      }
 
@@ -530,7 +539,7 @@ article.post {
      }
     button.owl-prev,
     button.owl-next {
-      border-top: 1px solid $grey-active;
+      border-top: 1px solid $grey-border;
       display: block;
       height: 40px;
       width: 40px;
@@ -544,12 +553,12 @@ article.post {
     }
 
     button.owl-prev {
-      border-left: 1px solid $grey-active;
+      border-left: 1px solid $grey-border;
       transform: translateX(50%) rotate(-45deg);
     }
 
     button.owl-next {
-      border-right: 1px solid $grey-active;
+      border-right: 1px solid $grey-border;
       transform: translateX(-50%) rotate(45deg);
     }
 
@@ -574,23 +583,26 @@ article.post {
   }
 
   .owl-item {
+    background: white;
+
     &.no__full > img {
       width: initial;
       margin: 0 auto;
+
+      @media (min-width: $bp-med) {
+        width: auto;
+        margin: 0 auto;
+        height: 60vh;
+        max-width: none;
+      }
     }
+
     section {
-      margin-top: 10px;
-      opacity:0;
-      transition: opacity $anim-dur/8 ease;
+      margin-top: 20px;
 
       p {
         margin-bottom: 0px;
       }
-    }
-
-    &.active section {
-      opacity:1;
-      transition: opacity $anim-dur*.8 ease $anim-dur/3;
     }
   }
 }
@@ -622,13 +634,13 @@ article.post {
     .aux_links {
 
       & > a {
-        color: var(--grey);
+        color: $grey-color;
 
         &.active {
-          color: var(--grey-active);
+          color: $grey-active;
         }
         &:hover {
-          color: var(--grey-active);
+          color: $grey-active;
         }
         &:not(:last-child) {
           padding-right: 12px;
@@ -674,7 +686,7 @@ article.post {
   }
 
   a {
-    color: var(--grey);
+    color: $grey-color;
   }
 
   p {
@@ -760,7 +772,7 @@ footer {
     font-size: 16px;
     line-height: 21px; 
     letter-spacing: 0.65px; 
-    color: var(--grey);
+    color: $grey-color;
     text-transform: uppercase;
     margin-bottom: 0px;
   }

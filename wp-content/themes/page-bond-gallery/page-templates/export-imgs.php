@@ -20,17 +20,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="col-md-10">
 							<div class="box-stroke adding__padding__top">
 							<div class="row">
-								<?php 
-									$img_r = array();
-									$query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
+								<?php
+								// export all images 
+									// $img_r = array();
+									// $query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
+									// while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
+									// 	$file_name = explode('/2018/04/', $post->guid);
+									// 	$img_r[$file_name[1]] = $post->ID;
+									// endwhile; 
+									// wp_reset_query(); //Reset to post parent
+
+									// echo '<pre>';
+									// print_r($img_r);
+									// echo '</pre>';
+								//export all artists
+									$artist_r = array();
+									$query_attaches = new WP_Query(array('post_type' => 'artists', 'post_status' => 'any', 'order' =>  'ASC', 'posts_per_page' => -1));
 									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
-										$file_name = explode('/2018/04/', $post->guid);
-										$img_r[$file_name[1]] = $post->ID;
+										$file_name = $post->post_name;
+										$artist_r[$file_name] = $post->ID;
 									endwhile; 
 									wp_reset_query(); //Reset to post parent
 
 									echo '<pre>';
-									print_r($img_r);
+									print_r($artist_r);
 									echo '</pre>';
 
 // $cur_images = array(
