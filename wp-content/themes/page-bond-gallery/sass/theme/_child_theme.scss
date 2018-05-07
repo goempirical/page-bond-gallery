@@ -698,6 +698,12 @@ article.post {
     overflow: hidden;  
 }
 
+.loadmore_artists {
+  display: block;
+  text-align: center;
+  outline: none;
+}
+
 @media (min-width: $bp-med) {
   .grid-container,
   .main-content-area {
@@ -778,14 +784,24 @@ footer {
   }
 
   .resize_icons {
-      display: flex;
-      justify-content: flex-end; 
-      height: auto;
-    
-      .cont_image {
-      &:not(:last-of-type) {margin-right: 14px}
-     }
-    
+    display: flex;
+    justify-content: flex-end; 
+    height: auto;
+
+    a {
+      display: block;
+      height: 22px;
+      text-align: center;
+
+      &:not(:last-of-type) {
+        margin-right: 14px
+      }
+
+      svg {
+        height: 100%;
+        width: auto;
+      }
+    }
   }
 
   img#logo_art {
