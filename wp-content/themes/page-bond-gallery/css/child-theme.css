@@ -10187,6 +10187,11 @@ article.post:not(:last-child) {
 .content-area {
   overflow: hidden; }
 
+.loadmore_artists {
+  display: block;
+  text-align: center;
+  outline: none; }
+
 @media (min-width: 992px) {
   .grid-container,
   .main-content-area {
@@ -10254,8 +10259,15 @@ footer .resize_icons {
   display: flex;
   justify-content: flex-end;
   height: auto; }
-  footer .resize_icons .cont_image:not(:last-of-type) {
-    margin-right: 14px; }
+  footer .resize_icons a {
+    display: block;
+    height: 22px;
+    text-align: center; }
+    footer .resize_icons a:not(:last-of-type) {
+      margin-right: 14px; }
+    footer .resize_icons a svg {
+      height: 100%;
+      width: auto; }
 
 footer img#logo_art {
   width: 123px;
