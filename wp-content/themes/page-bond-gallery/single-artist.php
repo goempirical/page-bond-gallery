@@ -41,7 +41,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 													
 													foreach( $my_artist_content['artist_image_gallery'] as $slide ) : ?>
 														<div class="owl-item no__full">
-															<?php echo wp_get_attachment_image( $slide['ID'], 'slider' ); ?>
+															<?php 
+															$image_attributes = wp_get_attachment_image_src( $slide['ID'], 'lightbox' );
+															if ( $image_attributes ) : ?>
+															    <a href="<?php echo $image_attributes[0]; ?>" data-featherlight="image"><?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?></a>
+															<?php else: ?>
+																<?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?>
+															<?php endif; ?>
 															<section>
 																<?php
 																	$info = get_field('information', $slide['ID']);
@@ -183,5 +189,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 </div><!-- Container end -->
 
 </div><!-- Wrapper end -->
+<div class="lightbox" id="mylightbox">This div will be opened in a lightbox</div>
 
 <?php get_footer(); ?>

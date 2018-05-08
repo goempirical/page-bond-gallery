@@ -10113,11 +10113,11 @@ article.post:not(:last-child) {
 
 .owl-carousel .owl-item {
   background: white; }
-  .owl-carousel .owl-item.no__full > img {
+  .owl-carousel .owl-item.no__full img.slide-image {
     width: initial;
     margin: 0 auto; }
     @media (min-width: 992px) {
-      .owl-carousel .owl-item.no__full > img {
+      .owl-carousel .owl-item.no__full img.slide-image {
         width: auto;
         margin: 0 auto;
         height: 60vh;
@@ -10126,6 +10126,9 @@ article.post:not(:last-child) {
     margin-top: 20px; }
     .owl-carousel .owl-item section p {
       margin-bottom: 0px; }
+
+.featherlight .featherlight-content {
+  padding: 8vh 10vh 6vh; }
 
 .row.space__between > div[class^="col"] {
   margin-bottom: 30px; }

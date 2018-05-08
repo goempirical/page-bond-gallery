@@ -15,7 +15,10 @@ function theme_enqueue_styles() {
 
 	// Get the theme data
 	$the_theme = wp_get_theme();
+    wp_enqueue_style( 'featherlight-styles', '//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css', array(), $the_theme->get( 'Version' ) );
+
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
+
     wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
@@ -28,6 +31,8 @@ function theme_enqueue_styles() {
     wp_localize_script( 'pb_loadmore', 'pb_loadmore', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' )
     ));
+
+    wp_enqueue_script( 'featherlite', '//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js', array(), false);
 }
 
 function pb_ajax_artists() {
@@ -102,6 +107,7 @@ function nav_class_active ($classes, $item) {
 //Adding another image size for gallery
 add_image_size( 'slider', 1200, 645, true);
 add_image_size( 'post', 732, 383, true);
+add_image_size( 'lightbox', 2000, 2000, false);
 
 
 include 'custom-post-types/index.php';
