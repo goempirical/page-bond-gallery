@@ -585,7 +585,7 @@ article.post {
   .owl-item {
     background: white;
 
-    &.no__full > img {
+    &.no__full img.slide-image {
       width: initial;
       margin: 0 auto;
 
@@ -605,6 +605,10 @@ article.post {
       }
     }
   }
+}
+
+.featherlight .featherlight-content {
+  padding: 8vh 10vh 6vh;
 }
 
 .row.space__between > div[class^="col"] {

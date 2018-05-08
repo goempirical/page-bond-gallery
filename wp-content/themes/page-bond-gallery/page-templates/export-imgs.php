@@ -22,29 +22,73 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="row">
 								<?php
 								// export all images 
-									// $img_r = array();
-									// $query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
+									$img_r = array();
+									$img_web_r = array();
+									$query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
+									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
+										$file_name = explode('/2018/04/', $post->guid);
+										if(!$file_name[1]) {
+											$file_name = explode('/2018/05/', $post->guid);
+										}
+										$img_r[$file_name[1]] = $post->ID;
+									endwhile; 
+									wp_reset_query(); //Reset to post parent
+
+									$find = array(".jpg",".jpeg",".JPG",".png","_small",")","(",",");
+
+									$web = array("_weB","_WEB","_Web");
+									$lb = array("_LB","_lb","_Lb");
+
+									echo 'original count: '. count($img_r);
+
+									$img_flip = array_flip($img_r);
+
+									foreach ($img_flip as $key => $value) {
+										$cleaned_file = str_replace($find,"",$value);
+					        	$cleaned_file = ltrim($cleaned_file, '_');
+										$cleaned_file = str_replace($web,"",$cleaned_file);
+										$cleaned_file = str_replace($lb,"_LB",$cleaned_file);
+
+										$img_flip[$key] = $cleaned_file;
+									}
+
+									$img_r = array_flip($img_flip);
+
+									foreach ($img_flip as $key => $value) {
+
+										$cleaned_file = str_replace($lb,"_web",$value, $lb_count);
+					        	if($lb_count > 0) {
+					        		if (array_key_exists($cleaned_file, $img_r)) {
+						        		$img_web_r[] = $cleaned_file;
+						          }
+					        	} else {
+					        		if (array_key_exists($value.'_web', $img_r)) {
+						        		$img_web_r[] = $value.'_web';
+						          }
+					        	}
+					        }
+
+					        foreach ($img_web_r as $value) {
+					        	unset($img_r[$value]);
+					        }
+					        echo '<br>removed count: '. count($img_web_r);
+									echo '<br>after removed count: '. count($img_r);
+
+									echo '<br><pre>';
+									print_r($img_r);
+									echo '</pre>';
+								//export all artists
+									// $artist_r = array();
+									// $query_attaches = new WP_Query(array('post_type' => 'artists', 'post_status' => 'any', 'order' =>  'ASC', 'posts_per_page' => -1));
 									// while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
-									// 	$file_name = explode('/2018/04/', $post->guid);
-									// 	$img_r[$file_name[1]] = $post->ID;
+									// 	$file_name = $post->post_name;
+									// 	$artist_r[$file_name] = $post->ID;
 									// endwhile; 
 									// wp_reset_query(); //Reset to post parent
 
 									// echo '<pre>';
-									// print_r($img_r);
+									// print_r($artist_r);
 									// echo '</pre>';
-								//export all artists
-									$artist_r = array();
-									$query_attaches = new WP_Query(array('post_type' => 'artists', 'post_status' => 'any', 'order' =>  'ASC', 'posts_per_page' => -1));
-									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
-										$file_name = $post->post_name;
-										$artist_r[$file_name] = $post->ID;
-									endwhile; 
-									wp_reset_query(); //Reset to post parent
-
-									echo '<pre>';
-									print_r($artist_r);
-									echo '</pre>';
 
 // $cur_images = array(
 // 		'DSC_5827.jpg',
