@@ -189,6 +189,5 @@ $container   = get_theme_mod( 'understrap_container_type' );
 </div><!-- Container end -->
 
 </div><!-- Wrapper end -->
-<div class="lightbox" id="mylightbox">This div will be opened in a lightbox</div>
 
 <?php get_footer(); ?>
