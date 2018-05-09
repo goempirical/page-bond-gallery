@@ -18,53 +18,61 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						
 					<div class="container">
 						<div class="row justify-content-center">
-							<div class="col-md-10 ">		
+							<div class="col-md-11 grid-container">		
 								<div class="row">
 									<div class="col-md-12">
-										<div class="head_content box-stroke__bottom">
+										<div id="gallery-title" class="head_content box-stroke__bottom">
 												<h4><?php echo the_title();?></h4>
 												<div class="aux_links" >
-													<a href="#" class="toggle_artist">Thumbnails</a>
-													<a href="/artists">Back to Artists</a>
+													<a href="#" class="toggle_artist">Slideshow</a>
+													<a href="<?php echo site_url(); ?>/artists">Back to Artists</a>
 												</div>
 											</div>
 									</div>
 								</div>
 								<?php $my_artist_content = get_field('artist_content'); ?> 
 								<!--List all images from an artist--> 
-										<div class="toggle__content active">
-										<div class="owl-carousel next owl-theme owl-loaded">
-											<div class="owl-stage-outer">
-												<div class="owl-stage" >
-												<?php 
-													if( $my_artist_content['artist_images'] ) : 
-														
-														foreach( $my_artist_content['artist_images'] as $slide ) : ?>
-															<div class="owl-item no__full">
-																<?php echo wp_get_attachment_image( $slide["artist_image"]['ID'], 'medium' ); ?>
-																<section>
-																	<p> <?php echo $slide['content']['artist_info_title'] ?> </p>
-																	<p> <?php echo $slide['content']['artist_info_title_sec'] ?> </p>
-																</section> 
-															</div>
-														<?php 
-														endforeach;
-													endif; ?>
-												</div>
-											</div>
-									<div class="owl-counter" > 
-										<span class="index_count">...</span>
-										<span class="global_count">...</span> 
-									</div>
-								</div>  <!-- END OWL-CAROUSEL -->
-								</div>
 								<div class="toggle__content">
-									<div class="row .space__between">			
-								<?php 
-										if( $my_artist_content['artist_images'] ) : 
-											foreach( $my_artist_content['artist_images'] as $slide ) : ?>
-												<div class="col-md-4"> 
-													<img src="<?php echo $slide['artist_image']['sizes']['thumbnail'] ?>">
+									<div class="owl-carousel next owl-theme owl-loaded">
+										<div class="owl-stage-outer">
+											<div class="owl-stage" >
+											<?php 
+												if( $my_artist_content['artist_image_gallery'] ) : 
+													
+													foreach( $my_artist_content['artist_image_gallery'] as $slide ) : ?>
+														<div class="owl-item no__full">
+															<?php 
+															$image_attributes = wp_get_attachment_image_src( $slide['ID'], 'lightbox' );
+															if ( $image_attributes ) : ?>
+															    <a href="<?php echo $image_attributes[0]; ?>" data-featherlight="image"><?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?></a>
+															<?php else: ?>
+																<?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?>
+															<?php endif; ?>
+															<section>
+																<?php
+																	$info = get_field('information', $slide['ID']);
+																	echo $info ? $info : '';
+																?> 
+																<?php if(!get_field('hide_inquire_link', $slide['ID'])){ echo '<p><a href="#">INQUIRE &gt;</a></p>'; }?>
+															</section> 
+														</div>
+													<?php 
+													endforeach;
+												endif; ?>
+											</div>
+										</div>
+										<div class="owl-counter" > 
+											<span class="index_count">...</span><span class="global_count">...</span> 
+										</div>
+									</div>  <!-- END OWL-CAROUSEL -->
+								</div>
+								<div class="toggle__content active">
+									<div class="row">			
+									<?php 
+										if( $my_artist_content['artist_image_gallery'] ) : 
+											foreach( $my_artist_content['artist_image_gallery'] as $slide ) : ?>
+												<div class="col-md-4 grid-item"> 
+													<a href="#" class="gallery-image"><img src="<?php echo $slide['sizes']['thumbnail'] ?>"></a>
 												</div>
 											<?php 
 											endforeach;
@@ -78,7 +86,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						<div class="container">
 							<div class="row justify-content-center">
 
-								<div class="col-md-10">
+								<div class="col-md-11 main-content-area">
 									<div class="row">
 										<div class="col-md-12">
 
@@ -96,35 +104,36 @@ $container   = get_theme_mod( 'understrap_container_type' );
 												<li class="nav-item">
 													<a class="nav-link " id="artist_pe_tab" data-toggle="tab" href="#artist_pe" role="tab" aria-controls="artist_pe" aria-selected="false">Past Exhibitions</a>
 												</li>
-												<li class="nav-item text-right">
+												<?php if($my_artist_content['artist_cv_file']){ ?>
+												<li class="nav-item text-right flex-right">
 													<a class="nav-link" href="<?php echo $my_artist_content['artist_cv_file'];?>" download>Download CV</a>
 												</li>
-											</ul>
-										</div> <!-- END COL -->
-
-										<div class="col-md-0 no__padding__left">
-											<ul class="nav nav-tabs box-stroke justify-content-end">
-												<!-- DOWNLOAD CV	 -->
-										
+												<?php } ?>
 											</ul>
 										</div> <!-- END COL -->
 									</div> <!-- END ROW -->
 									
 									<div class="tab-content" id="tabArtistContent">
 
-										<div class="tab-pane fade show active" id="artist_cv" role="tabpanel" aria-labelledby="artist_cv_tab"> <?php echo $my_artist_content['artist_cv'];?> </div>
+										<div class="tab-pane fade show active" id="artist_cv" role="tabpanel" aria-labelledby="artist_cv_tab"> 
+											<div class="col-md-6 p-0">
+												<?php echo $my_artist_content['artist_cv'];?> 
+											</div>
+										</div>
 
 										<div class="tab-pane fade " id="artist_bio" role="tabpanel" aria-labelledby="artist_bio_tab"> 
-											<div class="row">
-												<div class="col-md-6">
+											<div class="col-md-6 p-0">
 													<?php echo $my_artist_content['artist_bio'];?>
-												</div>
-											</div>	
+											</div>
 										</div>
 										
-										<div class="tab-pane fade " id="artist_state" role="tabpanel" aria-labelledby="artist_state_tab"> <?php echo $my_artist_content['artist_statement']?> </div>
-
+										<div class="tab-pane fade " id="artist_state" role="tabpanel" aria-labelledby="artist_state_tab">
+											<div class="col-md-6 p-0">
+												<?php echo $my_artist_content['artist_statement']?> 
+											</div>
+										</div>
 										<div class="tab-pane fade " id="artist_pe" role="tabpanel" aria-labelledby="artist_pe_tab"> 
+											<div class="col-md-6 p-0">
 											<?php 
 												
 												$post_objects = $my_artist_content['artist_past_exhibitions'];
@@ -132,16 +141,18 @@ $container   = get_theme_mod( 'understrap_container_type' );
 												<ul>
 													<?php 
 														foreach( $post_objects as $post): 
-															setup_postdata($post); ?>
+															setup_postdata($post); 
+															$exhibition_content = get_field('exhibition_content');
+															?>
 																<li>
-																	<a href="<?php the_permalink(); ?>"> <h2><?php the_title(); ?></h2></a>
-																	<p> <?php echo get_the_date( 'F j, Y') ?> </p>
+																	<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+																	<p><?php echo $exhibition_content['date_text'];?></p>
 																</li>
 													<?php endforeach;?>
 												</ul>
 											<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 											<?php endif; ?>
-
+											</div>
 										</div>
 
 									</div> <!-- END TAB CONTENT -->

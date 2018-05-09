@@ -16,10 +16,10 @@
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content adding__space ">
+	<div class="entry-content">
 		<div class="row">
 
-			<div class="col-md-8">
+			<div class="col-md-8 grid-item">
 				<?php the_content(); ?>
 				
 				<?php

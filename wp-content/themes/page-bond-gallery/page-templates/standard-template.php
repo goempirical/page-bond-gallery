@@ -25,23 +25,19 @@ $put_boxStroke = 'box-stroke';
 
 				<main class="site-main" id="main" role="main">
 						<div class="row justify-content-center">
-						<div class="col-md-10 no__padding__left">
+						<div class="col-md-11 main-content-area">
 						<?php
 								if ( is_page() && $post->post_parent > 0 ) : 
 									$put_boxStroke = '';
 								?>
-								<div class="col-md-12 no__padding__right">
-										<?php	wp_nav_menu( 
-												array( 'menu' => 'contact_menu', 
-												'menu_class' => 'menu box-stroke__bottom',
-												'container_class' => 'menu-side-container'  ) );?>
-									
-								</div>
+									<?php	wp_nav_menu( 
+										array( 'menu' => 'contact_menu', 
+										'menu_class' => 'menu box-stroke__bottom',
+										'container_class' => 'menu-side-container'  ) );?>
 								<?php endif;?>
 								<?php /* GALLERY STANDARD */ ?> 
-									<div class="col-md-12 no__padding__right">
 									<div class="content full__img <?php echo $put_boxStroke; ?> adding__space adding__padding__top">
-									<?php $gallery_stand = get_field('gallery_standard'); $size = 'slider';?>
+									<?php $gallery_stand = get_field('page_image_gallery'); $size = 'slider';?>
 									
 									<?php if ( $gallery_stand ) :  ?>
 												
@@ -51,37 +47,34 @@ $put_boxStroke = 'box-stroke';
 										<div class="owl-carousel next owl-theme owl-loaded">
 											<div class="owl-stage-outer">
 												<div class="owl-stage" >
-												<?php foreach( $gallery_stand as $image_standard  ) : ?>
-															<div class="owl-item no__full">
-															
-															<?php echo wp_get_attachment_image($image_standard['image']['ID'], $size); ?>
-															<section>
-																<?php $aux_description = $image_standard['content']; ?>
-																<p> <?php echo $aux_description['title_primary'] ?> </p>
-																<p><?php echo $aux_description['place'] ?> </p>	
-															</section>
-															</div>
-														<?php endforeach; ?>
+													<?php foreach( $gallery_stand as $slide  ) : ?>
+														<div class="owl-item no__full">
+															<?php echo wp_get_attachment_image( $slide['ID'], $size ); ?>
+															<?php
+																$info = get_field('information', $slide['ID']);
+																echo $info ? '<section>' . $info . '</section>' : '';
+															?>  
+														</div>
+													<?php endforeach; ?>
 												</div>
 											</div>
-									<div class="owl-counter" > 
-										<span class="index_count">...</span>
-										<span class="global_count">...</span> 
-									</div>
-								</div>  <!-- END OWL-CAROUSEL -->
-								<?php else: ?> 													
+											<div class="owl-counter" > 
+												<span class="index_count">...</span>
+												<span class="global_count">...</span> 
+											</div>
+										</div>  <!-- END OWL-CAROUSEL -->
+
+									<?php else: ?> 													
 												<!-- SHOW JUST A IMAGE -->
-											
-											<?php foreach( $gallery_stand as $image_standard ) : ?> 
+										<?php foreach( $gallery_stand as $image_standard ) : ?> 
 
-												<?php echo wp_get_attachment_image($image_standard['ID'], 'full'); ?> 
+											<?php echo wp_get_attachment_image($image_standard['ID'], 'full'); ?> 
 
-											<?php endforeach; ?> 
-											
-											<?php endif; ?> 
+										<?php endforeach; ?> 
 										
-										<?php endif; ?>
-									</div>
+									<?php endif; ?> 
+									
+								<?php endif; ?>
 								</div>
 								<?php if( get_field('team') ) : ?>
 									<div class="col-md-12 no__padding__right">
@@ -106,26 +99,14 @@ $put_boxStroke = 'box-stroke';
 										</div> 
 									</div>
 								<?php endif; ?>
-								<div class="col-md-12 no__padding__right">
-									<?php while ( have_posts() ) : the_post(); ?>
-										<div class="aux_content <?php echo $put_boxStroke; ?>  adding__space adding__padding__top">
-											<?php get_template_part( 'loop-templates/content', 'page' ); ?>
-										</div>
-										
+								<?php while ( have_posts() ) : the_post(); ?>
+									<div class="aux_content <?php echo $put_boxStroke; ?>  adding__space pt-5">
+										<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+									</div>
+									
+								<?php endwhile; // end of the loop. ?>
+							</div>	
 
-										<?php
-										// If comments are open or we have at least one comment, load up the comment template.
-										if ( comments_open() || get_comments_number() ) :
-
-											comments_template();
-
-										endif;
-										?>
-
-									<?php endwhile; // end of the loop. ?>
-								</div>	
-
-						</div>
 					</div> <!-- END ROW -->
 			
 				</main><!-- #main -->
