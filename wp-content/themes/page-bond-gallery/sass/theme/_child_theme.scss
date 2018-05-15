@@ -95,13 +95,16 @@ h3, h4, h5, h6 {
   letter-spacing: 0.6px;
 }
 
-.head_content h4{
+.head_content h1 {
   text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
-h1.gallery-title {
+h1.gallery-title,
+h1.page-title,
+h1.entry-title {
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
   & + p {
     margin-bottom: 10px;
@@ -407,7 +410,6 @@ div[class^="col"] {
 
     aside {
       text-transform: uppercase;
-      width: 200px;
       margin-left: auto;
 
       form {
@@ -704,6 +706,33 @@ article.post {
   }
 }
 
+.page-content {
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0 0 4px;
+  }
+
+  p + h2, 
+  p + h3, 
+  p + h4, 
+  p + h5, 
+  p + h6 {
+    margin-top:20px;
+  }
+
+
+  a {
+    color: $blue;
+
+    &:hover {
+      color:$grey-dark;
+    }
+  }
+}
+
 .content-area {
     overflow: hidden;  
 }
@@ -712,6 +741,10 @@ article.post {
   display: block;
   text-align: center;
   outline: none;
+}
+
+.main-content-area {
+  min-height:55vh;
 }
 
 @media (min-width: $bp-med) {
@@ -732,6 +765,8 @@ article.post {
     }
   }
 
+  .main-content-area .content-area,
+  .main-content-area .widget-area,
   .grid-item {
     padding-right: 20px;
     padding-left: 20px;
@@ -761,9 +796,15 @@ article.post {
     }
   }
 
+  .main-content-area .content-area,
+  .main-content-area .widget-area,
   .grid-item {
     padding-right: 40px;
     padding-left: 40px;
+  }
+
+  .main-content-area .widget-area {
+    padding-left:100px;
   }
 }
 

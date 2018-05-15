@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<div class="col-md-12 content-area" id="primary">
+			<div class="col-md-12 content-area page-content" id="primary">
 
 
 				<main class="site-main" id="main" role="main">
@@ -25,7 +25,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php get_template_part( 'loop-templates/content', 'contact' ); ?>
-
 
 					<?php endwhile; // end of the loop. ?>
 

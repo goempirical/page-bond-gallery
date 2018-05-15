@@ -26,9 +26,9 @@ $container  = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row justify-content-center">
 
-			<div class="col-md-10">
+			<div class="col-md-11 main-content-area">
 			
-			<div class="aux_content box-stroke adding__space adding__padding__top">
+			<div class="aux_content box-stroke adding__padding__top">
 			
 			<div class="row">
 

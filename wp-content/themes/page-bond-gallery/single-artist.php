@@ -22,7 +22,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 								<div class="row">
 									<div class="col-md-12">
 										<div id="gallery-title" class="head_content box-stroke__bottom">
-												<h4><?php echo the_title();?></h4>
+												<h1><?php echo the_title();?></h1>
 												<div class="aux_links" >
 													<a href="#" class="toggle_artist">Slideshow</a>
 													<a href="<?php echo site_url(); ?>/artists">Back to Artists</a>
