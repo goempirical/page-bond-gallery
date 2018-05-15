@@ -72,8 +72,6 @@ $put_boxStroke = 'box-stroke';
 											</div>
 										</div>  <!-- END OWL-CAROUSEL -->
 
-
-
 									<?php else: ?> 													
 												<!-- SHOW JUST A IMAGE -->
 										<?php foreach( $gallery_stand as $image_standard ) : ?> 
@@ -87,33 +85,25 @@ $put_boxStroke = 'box-stroke';
 								<?php endif; ?>
 								</div>
 								<?php if( get_field('team') ) : ?>
-									<div class="col-md-12 no__padding__right">
-										<div class="row">
-											<?php $team_stand = get_field('team'); ?>
-											<?php foreach( $team_stand as $member ) : ?>
-												<div class="col-md-12 adding__space__bottom">
-													<div class="row">
-														<div class="col-md-4"> <?php echo wp_get_attachment_image($member['photo']['ID'], 'thumbnail'); ?> </div>
-														<div class="col-md-8">
-														<?php $content_member = $member['content']; ?> 
-															<div class="content_member">
-																<h2> <?php echo $content_member['full_name'] ?> </h2>
-																<i> <?php echo $content_member['role'] ?> </i>
-																<?php echo $content_member['description'] ?>															
-															</div>
-
-														</div>
+									<?php $team_stand = get_field('team'); ?>
+										<?php foreach( $team_stand as $member ) : ?>
+											<div class="row">
+												<div class="col-md-4 grid-item"> <?php echo wp_get_attachment_image($member['photo']['ID'], 'thumbnail'); ?> </div>
+												<div class="col-md-8 grid-item">
+													<?php $content_member = $member['content']; ?> 
+													<div class="content_member">
+														<h2><?php echo $content_member['full_name'] ?></h2>
+														<i><?php echo $content_member['role'] ?></i>
+														<?php echo $content_member['description'] ?>															
 													</div>
 												</div>
-											<?php endforeach; ?>
-										</div> 
-									</div>
+											</div>
+										<?php endforeach; ?>
 								<?php endif; ?>
 								<?php while ( have_posts() ) : the_post(); ?>
 									<div class="aux_content <?php echo $put_boxStroke; ?>  adding__space pt-5">
 										<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 									</div>
-									
 								<?php endwhile; // end of the loop. ?>
 							</div>	
 

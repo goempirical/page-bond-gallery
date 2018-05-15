@@ -13,8 +13,8 @@
     src: local('Omnes Light'), url('../fonts/Omnes/omnes-light-webfont.woff') format('woff');
 }*/
 
-$body-font: 'omnes-pro';
-$title-font: 'omnes-pro';
+$body-font: 'omnes-pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$title-font: 'omnes-pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $grey-dark:  #262626;
 $grey-color:  #4d4d4d;
 $grey-headings:  #6a6a6a;
