@@ -135,7 +135,13 @@ nav.navbar{
 }
 
 .navbar-brand { 
-  padding: 0; display: grid; margin-bottom: 2px; 
+  padding: 0; 
+  display: grid; 
+  margin-bottom: 2px; 
+
+  img {
+    width: 100%;
+  }
 }
 
 #navbarNavDropdown {

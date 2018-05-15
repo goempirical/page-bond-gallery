@@ -1,10 +1,11 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Omnes Light';
-  font-style: normal;
-  font-weight: normal;
-  src: local("Omnes Light"), url("../fonts/Omnes/omnes-light-webfont.woff") format("woff"); }
-
+@import url("https://use.typekit.net/jqh3jet.css");
+/*@font-face {
+    font-family: 'Omnes Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Omnes Light'), url('../fonts/Omnes/omnes-light-webfont.woff') format('woff');
+}*/
 :root {
   --grey-dark: $grey-dark;
   --blue: #003399;
@@ -46,7 +47,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: Omnes Light;
+  --font-family-sans-serif: omnes-pro;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -70,7 +71,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-size: 1rem;
   font-weight: 200;
   line-height: 1.5;
@@ -4739,7 +4740,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-style: normal;
   font-weight: 200;
   line-height: 1.5;
@@ -4824,7 +4825,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-style: normal;
   font-weight: 200;
   line-height: 1.5;
@@ -9782,7 +9783,7 @@ li,
   text-rendering: optimizeLegibility; }
 
 h1 {
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-size: 25px;
   line-height: 1;
   letter-spacing: 0.6px;
@@ -9790,7 +9791,7 @@ h1 {
   margin-bottom: 0px; }
 
 h2 {
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-size: 19px;
   line-height: 25px;
   letter-spacing: 0.6px;
@@ -9823,7 +9824,7 @@ a {
   color: #003399; }
 
 p {
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.65px;
@@ -9836,6 +9837,8 @@ nav.navbar {
   padding: 0;
   display: grid;
   margin-bottom: 2px; }
+  .navbar-brand img {
+    width: 100%; }
 
 #navbarNavDropdown {
   justify-content: flex-end; }
@@ -9854,7 +9857,7 @@ nav.navbar {
       padding: 0px 11px; }
 
 .navbar-light .navbar-nav .nav-link {
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.65px;
@@ -10250,7 +10253,7 @@ article.post:not(:last-child) {
     padding-left: 40px; } }
 
 footer.site-footer p {
-  font-family: "Omnes Light";
+  font-family: "omnes-pro";
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.65px;
