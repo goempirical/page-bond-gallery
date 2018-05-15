@@ -9837,6 +9837,8 @@ nav.navbar {
   padding: 0;
   display: grid;
   margin-bottom: 2px; }
+  .navbar-brand img {
+    width: 100%; }
 
 #navbarNavDropdown {
   justify-content: flex-end; }

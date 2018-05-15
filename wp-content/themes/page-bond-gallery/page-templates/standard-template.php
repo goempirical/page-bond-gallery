@@ -43,26 +43,36 @@ $put_boxStroke = 'box-stroke';
 												
 										<?php if ( sizeof( $gallery_stand ) > 1 ): ?> 
 												<!-- SHOW A SLIDER IF THERE MORE THAN 1 IMAGE -->
-												
 										<div class="owl-carousel next owl-theme owl-loaded">
 											<div class="owl-stage-outer">
 												<div class="owl-stage" >
-													<?php foreach( $gallery_stand as $slide  ) : ?>
+												<?php 
+													foreach( $gallery_stand as $slide ) : ?>
 														<div class="owl-item no__full">
-															<?php echo wp_get_attachment_image( $slide['ID'], $size ); ?>
-															<?php
-																$info = get_field('information', $slide['ID']);
-																echo $info ? '<section>' . $info . '</section>' : '';
-															?>  
+															<?php 
+															$image_attributes = wp_get_attachment_image_src( $slide['ID'], 'lightbox' );
+															if ( $image_attributes ) : ?>
+															    <a href="<?php echo $image_attributes[0]; ?>" data-featherlight="image"><?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?></a>
+															<?php else: ?>
+																<?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?>
+															<?php endif; ?>
+															<section>
+																<?php
+																	$info = get_field('information', $slide['ID']);
+																	echo $info ? $info : '';
+																?> 
+															</section> 
 														</div>
-													<?php endforeach; ?>
+													<?php 
+													endforeach;?>
 												</div>
 											</div>
 											<div class="owl-counter" > 
-												<span class="index_count">...</span>
-												<span class="global_count">...</span> 
+												<span class="index_count">...</span><span class="global_count">...</span> 
 											</div>
 										</div>  <!-- END OWL-CAROUSEL -->
+
+
 
 									<?php else: ?> 													
 												<!-- SHOW JUST A IMAGE -->

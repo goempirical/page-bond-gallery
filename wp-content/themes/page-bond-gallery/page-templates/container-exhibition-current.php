@@ -131,7 +131,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 								$args = array(
 									'numberposts'	=> -1,
-									'post_type'		=> 'artists',
+									'post_type'		=> 'artist',
 									'meta_query'	=> array(
 										'relation'		=> 'OR',
 										array(

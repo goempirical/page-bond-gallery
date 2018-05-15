@@ -16,7 +16,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 			<div class="col-md-12 content-area" id="primary">
 			 <main class="site-main" id="main" role="main">
-
 				<div class="owl-carousel owl-theme owl-loaded">
 					<div class="owl-stage-outer">
 						<div class="owl-stage" >
@@ -25,7 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						$link = get_field('link') ? get_field('link') : false;
 						if( get_field('slides') ) : 
 						foreach( get_field('slides') as $slide ) : ?>
-						<div class="owl-item">
+						<div class="owl-item no__full">
 							<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
 								<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
 							<?php echo $link ? '</a>' : ''; ?> 

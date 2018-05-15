@@ -45,18 +45,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 											<div class="owl-stage" >
 											<?php 
 												if( $exhibition_content['exhibition_images'] ) : 
+													
 													foreach( $exhibition_content['exhibition_images'] as $slide ) : ?>
 														<div class="owl-item no__full">
-															<?php echo wp_get_attachment_image( $slide['ID'], 'large' ); ?>
-															<?php
-																$info = get_field('information', $slide['ID']);
-																echo $info ? '<section>' . $info . '</section>' : '';
-															?>  
+															<?php 
+															$image_attributes = wp_get_attachment_image_src( $slide['ID'], 'lightbox' );
+															if ( $image_attributes ) : ?>
+															    <a href="<?php echo $image_attributes[0]; ?>" data-featherlight="image"><?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?></a>
+															<?php else: ?>
+																<?php echo wp_get_attachment_image( $slide['ID'], 'slider', "", ["class" => "slide-image"] ); ?>
+															<?php endif; ?>
+															<section>
+																<?php
+																	$info = get_field('information', $slide['ID']);
+																	echo $info ? $info : '';
+																?> 
+																<?php if(!get_field('hide_inquire_link', $slide['ID'])){ echo '<p><a href="#">INQUIRE &gt;</a></p>'; }?>
+															</section> 
 														</div>
 													<?php 
 													endforeach;
-												endif; 
-											?>
+												endif; ?>
 											</div>
 										</div>
 										<div class="owl-counter" > 
@@ -116,7 +125,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 								$args = array(
 									'numberposts'	=> -1,
-									'post_type'		=> 'artists',
+									'post_type'		=> 'artist',
 									'meta_query'	=> array(
 										'relation'		=> 'OR',
 										array(
