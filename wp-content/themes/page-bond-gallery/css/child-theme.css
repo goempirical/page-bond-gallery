@@ -9804,13 +9804,18 @@ h3, h4 {
 h3, h4, h5, h6 {
   letter-spacing: 0.6px; }
 
-.head_content h4 {
-  text-transform: uppercase; }
-
-h1.gallery-title {
+.head_content h1 {
   text-transform: uppercase;
-  margin-bottom: 8px; }
-  h1.gallery-title + p {
+  margin-bottom: 12px; }
+
+h1.gallery-title,
+h1.page-title,
+h1.entry-title {
+  text-transform: uppercase;
+  margin-bottom: 12px; }
+  h1.gallery-title + p,
+  h1.page-title + p,
+  h1.entry-title + p {
     margin-bottom: 10px; }
 
 .home h1 {
@@ -10006,7 +10011,6 @@ div[class^="col"] .content_member i {
 
 .widget-area aside {
   text-transform: uppercase;
-  width: 200px;
   margin-left: auto; }
   .widget-area aside form label {
     display: none; }
@@ -10190,6 +10194,24 @@ article.post:not(:last-child) {
   .grid-item p {
     margin: 4px 0 0; }
 
+.page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6 {
+  margin-bottom: 0; }
+
+.page-content p {
+  margin: 0 0 4px; }
+
+.page-content p + h2,
+.page-content p + h3,
+.page-content p + h4,
+.page-content p + h5,
+.page-content p + h6 {
+  margin-top: 20px; }
+
+.page-content a {
+  color: #003399; }
+  .page-content a:hover {
+    color: #262626; }
+
 .content-area {
   overflow: hidden; }
 
@@ -10197,6 +10219,9 @@ article.post:not(:last-child) {
   display: block;
   text-align: center;
   outline: none; }
+
+.main-content-area {
+  min-height: 55vh; }
 
 @media (min-width: 992px) {
   .grid-container,
@@ -10213,10 +10238,14 @@ article.post:not(:last-child) {
     .main-content-area .nav-tabs {
       margin-left: 5px;
       margin-right: 5px; }
+  .main-content-area .content-area,
+  .main-content-area .widget-area,
   .grid-item {
     padding-right: 20px;
     padding-left: 20px; }
-    .single-artists .grid-item {
+    .single-artists .main-content-area .content-area, .single-artists
+    .main-content-area .widget-area, .single-artists
+    .grid-item {
       margin-top: 30px;
       margin-bottom: 50px; } }
 
@@ -10235,9 +10264,13 @@ article.post:not(:last-child) {
     .main-content-area .nav-tabs {
       margin-left: 25px;
       margin-right: 25px; }
+  .main-content-area .content-area,
+  .main-content-area .widget-area,
   .grid-item {
     padding-right: 40px;
-    padding-left: 40px; } }
+    padding-left: 40px; }
+  .main-content-area .widget-area {
+    padding-left: 100px; } }
 
 .site-main {
   width: 100%; }

@@ -21,11 +21,11 @@ $put_boxStroke = 'box-stroke';
 		<div class="row justify-content-center">
 			
 
-			<div class="col-md-12 content-area " id="primary">
+			<div class="col-md-12 content-area" id="primary">
 
 				<main class="site-main" id="main" role="main">
 						<div class="row justify-content-center">
-						<div class="col-md-11 main-content-area">
+						<div class="col-md-11 main-content-area page-content">
 						<?php
 								if ( is_page() && $post->post_parent > 0 ) : 
 									$put_boxStroke = '';
