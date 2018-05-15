@@ -17,35 +17,26 @@
 
 	<div class="entry-content">
 
-	
-
 			<div class="row justify-content-center">
 
-				<div class="col-md-10">
+				<div class="col-md-11 main-content-area">
 
-					<div class="row justify-content-center">
-
-						<div class="col-md-12">
 						<?php //echo print_r( wp_get_nav_menu_object('')->count ); 
 							wp_nav_menu( 
 								array( 'menu' => 'contact_menu', 
 									   'menu_class' => 'menu box-stroke__bottom',
 									   'container_class' => 'menu-side-container'  ) );
 						?> 
-						</div>
-
-					</div>
-
 
 					<div class="row row__space__bottom">
 
-						<div class="col-md-4">
+						<div class="col-md-4 grid-item">
 
 							<?php the_content(); ?>
 
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8 grid-item">
 
 							<?php $my_address = get_field('contact_map'); ?>
 		
@@ -60,29 +51,17 @@
 								) );
 							?>
 						
-					</div>
-			
-				</div>
-
-			</div>
+						</div>
 
 					</div>
-
-
-			<div class="row justify-content-center">
-
-				<div class="col-md-10 height_stand">
 					
-					<div class="box-stroke">
+				<div class="box-stroke">
 
-						<?php echo get_field('contact_policy'); ?>
-
-					</div>
+					<?php echo get_field('contact_policy'); ?>
 
 				</div>
 
 			</div>
-		
 
 	</div><!-- .entry-content -->
 
