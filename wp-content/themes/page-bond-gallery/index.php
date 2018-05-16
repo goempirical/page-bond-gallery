@@ -83,10 +83,13 @@ $container  = get_theme_mod( 'understrap_container_type' );
 				'after_page_number'  => ''
 			);
 			
-			understrap_pagination($args); 
-		 
-				//wp_link_pages( $defaults );?>
-			
+			?>
+			<div class="blogroll-footer d-flex justify-content-between"> 
+			<?php
+			previous_posts_link( '&lt; Previous' );
+			next_posts_link( 'Next &gt;' );
+		 	?>
+		 	</div>
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
