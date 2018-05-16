@@ -10275,6 +10275,11 @@ article.post:not(:last-child) {
 .site-main {
   width: 100%; }
 
+.blogroll-footer a {
+  color: #4d4d4d; }
+  .blogroll-footer a:hover {
+    color: #999999; }
+
 @media (min-width: 992px) {
   .footer-inner {
     padding-right: 20px;

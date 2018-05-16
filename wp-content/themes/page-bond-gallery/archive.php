@@ -63,9 +63,12 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 			</main><!-- #main -->
 
-			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
-
+			<div class="blogroll-footer d-flex justify-content-between"> 
+			<?php
+			previous_posts_link( '&lt; Previous' );
+			next_posts_link( 'Next &gt;' );
+		 	?>
+		 	</div>
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
