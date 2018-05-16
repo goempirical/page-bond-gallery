@@ -119,7 +119,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="tab-pane fade show active" id="artist_cv" role="tabpanel" aria-labelledby="artist_cv_tab"> 
 						<div class="col-md-6 p-0">
-							<?php echo '';?> 
+							<?php 
+								if ($exhibition_content['press_release']) {
+									echo $exhibition_content['press_release'];
+								}
+							?> 
 						</div>
 					</div>
 
