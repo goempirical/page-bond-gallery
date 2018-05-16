@@ -29,34 +29,19 @@
 
 	</header><!-- .entry-header -->
 
-<?php 
-	$my_content = get_field('news_content');
-	while ( have_rows('news_content') ) : the_row();
-
-		$sub_field = get_sub_field('news_post_embed');
-		
-			if ( have_rows('news_post_embed') ) {
+	<?php 
+		$video = get_field('video');
+		if ( $video ) { 
+	?>
+				<div class="videoWrapper">
+					<?php echo $video; ?>
+				</div>
+	<?php
+		} elseif ( has_post_thumbnail() ) {
+			the_post_thumbnail('large');
+		}
+	?>
 				
-				while ( have_rows('news_post_embed') ) : the_row();
-
-					$layout = get_row_layout();
-
-						if ( $layout === 'select_video' ) { 
-?>
-							<div class="videoWrapper">
-								<?php echo get_sub_field('video'); ?>
-							</div>
-<?php
-						} else {
-							echo  wp_get_attachment_image( get_sub_field('image')['ID'], 'post' );
-						}
-				endwhile;
-			}
-
-	endwhile;
-?>
-				
-
 	<div class="entry-content">
 		<p> <?php echo wp_trim_words(  get_the_content() , 30, '...' ); ?> </p>
 	</div><!-- .entry-content -->
