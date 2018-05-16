@@ -23,124 +23,124 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<?php
 
 				// sort and match pdfs to artists
-								$artist = array (
-									'6801' => 'Chan_CV_17',
-							    '6802' => 'Conner_CV_16',
-							    '6803' => 'Hobbs_CV_17',
-							    '6804' => 'Mickett:stackhouse_CV',
-							    '6805' => 'Blair_CV_17',
-							    '6806' => 'Joye_CV_17',
-							    '6807' => 'Culot_CV_17',
-							    '6808' => 'Gowin_Emmet_CV_16',
-							    '6809' => 'Walz_CV_15',
-							    '6810' => 'Jaydan_Moore_CV_17',
-							    '6811' => 'Means_CV_17',
-							    '6814' => 'Henebry_CV_17',
-							    '6815' => 'Baer_CV_17',
-							    '6816' => 'JWilliams_CV_17',
-							    '6818' => 'Abbot_CV_17',
-							    '6869' => 'Kolster_CV_16',
-							    '6820' => 'Crist_Resume_16',
-							    '6821' => 'Sanford_CV__17',
-							    '6822' => 'Bumgardner_Jim_CV_15',
-							    '6823' => 'Apfelbaum_CV_17',
-							    '6824' => 'Llewellyn_CV_16',
-							    '6825' => 'Irvin_Resume_16',
-							    '6826' => 'Mann_CV_16',
-							    '6827' => 'Morrison_CV_17',
-							    '6829' => 'Markowitz_CV_17',
-							    '6830' => 'Berry_CV_16',
-							    '6831' => 'Gowin_CV_16',
-							    '6834' => 'Ross_CV_17',
-							    '6835' => 'Millner_Resume_12',
-							    '6837' => 'Stettinius_CV_17',
-							    '6838' => 'Fenci_CV_16',
-							    '6839' => 'Braun_Resume_16',
-							    '6840' => 'Ripley_CV_17',
-							    '6841' => 'Cooley_Resume_16',
-							    '6842' => 'Kazaan_CV_17.2',
-							    '6895' => 'Bality_CV_17',
-							    '6844' => 'Moore_CV_17',
-							    '6846' => 'Hecht_CV_16',
-							    '6847' => 'Jackson_CV_17',
-							    '6848' => 'Sjovold_resume_14',
-							    '6849' => 'Baldessari_CV_17',
-							    '6850' => 'Akamatsu_CV_16',
-							    '6901' => 'George_Resume_16',
-							    '6852' => 'Kelly_CV_17',
-							    '6854' => 'Crnjak_CV_16',
-							    '6903' => 'Saloutos_CV_16'
-							);
+							// 	$artist = array (
+							// 		'6801' => 'Chan_CV_17',
+							//     '6802' => 'Conner_CV_16',
+							//     '6803' => 'Hobbs_CV_17',
+							//     '6804' => 'Mickett:stackhouse_CV',
+							//     '6805' => 'Blair_CV_17',
+							//     '6806' => 'Joye_CV_17',
+							//     '6807' => 'Culot_CV_17',
+							//     '6808' => 'Gowin_Emmet_CV_16',
+							//     '6809' => 'Walz_CV_15',
+							//     '6810' => 'Jaydan_Moore_CV_17',
+							//     '6811' => 'Means_CV_17',
+							//     '6814' => 'Henebry_CV_17',
+							//     '6815' => 'Baer_CV_17',
+							//     '6816' => 'JWilliams_CV_17',
+							//     '6818' => 'Abbot_CV_17',
+							//     '6869' => 'Kolster_CV_16',
+							//     '6820' => 'Crist_Resume_16',
+							//     '6821' => 'Sanford_CV__17',
+							//     '6822' => 'Bumgardner_Jim_CV_15',
+							//     '6823' => 'Apfelbaum_CV_17',
+							//     '6824' => 'Llewellyn_CV_16',
+							//     '6825' => 'Irvin_Resume_16',
+							//     '6826' => 'Mann_CV_16',
+							//     '6827' => 'Morrison_CV_17',
+							//     '6829' => 'Markowitz_CV_17',
+							//     '6830' => 'Berry_CV_16',
+							//     '6831' => 'Gowin_CV_16',
+							//     '6834' => 'Ross_CV_17',
+							//     '6835' => 'Millner_Resume_12',
+							//     '6837' => 'Stettinius_CV_17',
+							//     '6838' => 'Fenci_CV_16',
+							//     '6839' => 'Braun_Resume_16',
+							//     '6840' => 'Ripley_CV_17',
+							//     '6841' => 'Cooley_Resume_16',
+							//     '6842' => 'Kazaan_CV_17.2',
+							//     '6895' => 'Bality_CV_17',
+							//     '6844' => 'Moore_CV_17',
+							//     '6846' => 'Hecht_CV_16',
+							//     '6847' => 'Jackson_CV_17',
+							//     '6848' => 'Sjovold_resume_14',
+							//     '6849' => 'Baldessari_CV_17',
+							//     '6850' => 'Akamatsu_CV_16',
+							//     '6901' => 'George_Resume_16',
+							//     '6852' => 'Kelly_CV_17',
+							//     '6854' => 'Crnjak_CV_16',
+							//     '6903' => 'Saloutos_CV_16'
+							// );
 
-							$pdfs = array (
-							    'Abbot_CV_17' => '9427',
-							    'Akamatsu_CV_16' => '9428',
-							    'Apfelbaum_CV_17' => '9429',
-							    'Baer_CV_17' => '9430',
-							    'Baldessari_CV_17' => '9431',
-							    'Bality_CV_17' => '9432',
-							    'Berry_CV_16' => '9433',
-							    'Blair_CV_17' => '9434',
-							    'Blair_resume_16' => '9435',
-							    'Braun_Resume_16' => '9436',
-							    'Bumgardner_Jim_CV_15' => '9437',
-							    'Bumgardner_resume_16' => '9438',
-							    'Chan_CV_16' => '9439',
-							    'Chan_CV_17' => '9440',
-							    'Christopher_Baer_CV' => '9441',
-							    'Conner_CV_16' => '9442',
-							    'Cooley_Resume_16' => '9443',
-							    'Crist_Resume_16' => '9444',
-							    'Crnjak_CV_16' => '9445',
-							    'Culot_CV_17' => '9446',
-							    'Fenci_CV_16' => '9447',
-							    'George_Resume_16' => '9448',
-							    'Gowin_CV_16' => '9449',
-							    'Gowin_Emmet_CV_16' => '9450',
-							    'Hecht_CV_16' => '9451',
-							    'Henebry_CV_16' => '9452',
-							    'Henebry_CV_17' => '9453',
-							    'Hobbs_CV_17' => '9454',
-							    'Irvin_Resume_16' => '9455',
-							    'Jackson_CV_17' => '9456',
-							    'Jaydan_Moore_CV_17' => '9457',
-							    'Joye_CV_17' => '9458',
-							    'Joye_CV16' => '9459',
-							    'JWilliams_CV_17' => '9460',
-							    'Kazaan_CV_17.2' => '9461',
-							    'Kelly_CV_16' => '9462',
-							    'Kelly_CV_17' => '9463',
-							    'Kolster_CV_16' => '9464',
-							    'Llewellyn_CV_16' => '9465',
-							    'Mann_CV_16' => '9466',
-							    'Markowitz_CV_16' => '9467',
-							    'Markowitz_CV_17' => '9468',
-							    'Means_CV_17' => '9469',
-							    'Mickettstackhouse_CV' => '9470',
-							    'Millner_Resume_12' => '9471',
-							    'Moore_CV_17' => '9472',
-							    'Morrison_CV_17' => '9473',
-							    'Ripley_CV_17' => '9474',
-							    'Ross_CV_17' => '9475',
-							    'Saloutos_CV_16' => '9476',
-							    'Sanford_CV__17' => '9477',
-							    'Sjovold_resume_14' => '9478',
-							    'Stettinius_CV_17' => '9479',
-							    'Walz_CV_15' => '9480',
-							    'Williams_CV_17' => '9481',
-							);
+							// $pdfs = array (
+							//     'Abbot_CV_17' => '9427',
+							//     'Akamatsu_CV_16' => '9428',
+							//     'Apfelbaum_CV_17' => '9429',
+							//     'Baer_CV_17' => '9430',
+							//     'Baldessari_CV_17' => '9431',
+							//     'Bality_CV_17' => '9432',
+							//     'Berry_CV_16' => '9433',
+							//     'Blair_CV_17' => '9434',
+							//     'Blair_resume_16' => '9435',
+							//     'Braun_Resume_16' => '9436',
+							//     'Bumgardner_Jim_CV_15' => '9437',
+							//     'Bumgardner_resume_16' => '9438',
+							//     'Chan_CV_16' => '9439',
+							//     'Chan_CV_17' => '9440',
+							//     'Christopher_Baer_CV' => '9441',
+							//     'Conner_CV_16' => '9442',
+							//     'Cooley_Resume_16' => '9443',
+							//     'Crist_Resume_16' => '9444',
+							//     'Crnjak_CV_16' => '9445',
+							//     'Culot_CV_17' => '9446',
+							//     'Fenci_CV_16' => '9447',
+							//     'George_Resume_16' => '9448',
+							//     'Gowin_CV_16' => '9449',
+							//     'Gowin_Emmet_CV_16' => '9450',
+							//     'Hecht_CV_16' => '9451',
+							//     'Henebry_CV_16' => '9452',
+							//     'Henebry_CV_17' => '9453',
+							//     'Hobbs_CV_17' => '9454',
+							//     'Irvin_Resume_16' => '9455',
+							//     'Jackson_CV_17' => '9456',
+							//     'Jaydan_Moore_CV_17' => '9457',
+							//     'Joye_CV_17' => '9458',
+							//     'Joye_CV16' => '9459',
+							//     'JWilliams_CV_17' => '9460',
+							//     'Kazaan_CV_17.2' => '9461',
+							//     'Kelly_CV_16' => '9462',
+							//     'Kelly_CV_17' => '9463',
+							//     'Kolster_CV_16' => '9464',
+							//     'Llewellyn_CV_16' => '9465',
+							//     'Mann_CV_16' => '9466',
+							//     'Markowitz_CV_16' => '9467',
+							//     'Markowitz_CV_17' => '9468',
+							//     'Means_CV_17' => '9469',
+							//     'Mickettstackhouse_CV' => '9470',
+							//     'Millner_Resume_12' => '9471',
+							//     'Moore_CV_17' => '9472',
+							//     'Morrison_CV_17' => '9473',
+							//     'Ripley_CV_17' => '9474',
+							//     'Ross_CV_17' => '9475',
+							//     'Saloutos_CV_16' => '9476',
+							//     'Sanford_CV__17' => '9477',
+							//     'Sjovold_resume_14' => '9478',
+							//     'Stettinius_CV_17' => '9479',
+							//     'Walz_CV_15' => '9480',
+							//     'Williams_CV_17' => '9481',
+							// );
 
-							$artist_pdfs = array();
+							// $artist_pdfs = array();
 
-							foreach ($artist as $key => $value) {
-								if(array_key_exists($value, $pdfs)) {
-									$artist_pdfs[$key] = $pdfs[$value];
-								}
-							}
+							// foreach ($artist as $key => $value) {
+							// 	if(array_key_exists($value, $pdfs)) {
+							// 		$artist_pdfs[$key] = $pdfs[$value];
+							// 	}
+							// }
 
-							echo '<pre>';
-							print_r($artist_pdfs);
-							echo '</pre>';
+							// echo '<pre>';
+							// print_r($artist_pdfs);
+							// echo '</pre>';
 
 				// get all csv ids
 									// $pdfs = array();
@@ -167,61 +167,61 @@ $container = get_theme_mod( 'understrap_container_type' );
 									// echo '</pre>';
 
 				// export all images 
-									// $img_r = array();
-									// $img_web_r = array();
-									// $query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
-									// while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
-									// 	$file_name = explode('/2018/04/', $post->guid);
-									// 	if(!$file_name[1]) {
-									// 		$file_name = explode('/2018/05/', $post->guid);
-									// 	}
-									// 	$img_r[$file_name[1]] = $post->ID;
-									// endwhile; 
-									// wp_reset_query(); //Reset to post parent
+									$img_r = array();
+									$img_web_r = array();
+									$query_attaches = new WP_Query(array('post_type' => 'attachment', 'post_status' => 'inherit', 'order' =>  'ASC', 'posts_per_page' => -1));
+									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
+										$file_name = explode('/2018/04/', $post->guid);
+										if(!$file_name[1]) {
+											$file_name = explode('/2018/05/', $post->guid);
+										}
+										$img_r[$file_name[1]] = $post->ID;
+									endwhile; 
+									wp_reset_query(); //Reset to post parent
 
-									// $find = array(".jpg",".jpeg",".JPG",".png","_small",")","(",",");
+									$find = array(".jpg",".jpeg",".JPG",".png","_small",")","(",",");
 
-									// $web = array("_weB","_WEB","_Web");
-									// $lb = array("_LB","_lb","_Lb");
+									$web = array("_weB","_WEB","_Web");
+									$lb = array("_LB","_lb","_Lb");
 
-									// echo 'original count: '. count($img_r);
+									echo 'original count: '. count($img_r);
 
-									// $img_flip = array_flip($img_r);
+									$img_flip = array_flip($img_r);
 
-									// foreach ($img_flip as $key => $value) {
-									// 	$cleaned_file = str_replace($find,"",$value);
-					    //     	$cleaned_file = ltrim($cleaned_file, '_');
-									// 	$cleaned_file = str_replace($web,"",$cleaned_file);
-									// 	$cleaned_file = str_replace($lb,"_LB",$cleaned_file);
+									foreach ($img_flip as $key => $value) {
+										$cleaned_file = str_replace($find,"",$value);
+					        	$cleaned_file = ltrim($cleaned_file, '_');
+										$cleaned_file = str_replace($web,"",$cleaned_file);
+										$cleaned_file = str_replace($lb,"_LB",$cleaned_file);
 
-									// 	$img_flip[$key] = $cleaned_file;
-									// }
+										$img_flip[$key] = $cleaned_file;
+									}
 
-									// $img_r = array_flip($img_flip);
+									$img_r = array_flip($img_flip);
 
-									// foreach ($img_flip as $key => $value) {
+									foreach ($img_flip as $key => $value) {
 
-									// 	$cleaned_file = str_replace($lb,"_web",$value, $lb_count);
-					    //     	if($lb_count > 0) {
-					    //     		if (array_key_exists($cleaned_file, $img_r)) {
-						   //      		$img_web_r[] = $cleaned_file;
-						   //        }
-					    //     	} else {
-					    //     		if (array_key_exists($value.'_web', $img_r)) {
-						   //      		$img_web_r[] = $value.'_web';
-						   //        }
-					    //     	}
-					    //     }
+										$cleaned_file = str_replace($lb,"_web",$value, $lb_count);
+					        	if($lb_count > 0) {
+					        		if (array_key_exists($cleaned_file, $img_r)) {
+						        		$img_web_r[] = $cleaned_file;
+						          }
+					        	} else {
+					        		if (array_key_exists($value.'_web', $img_r)) {
+						        		$img_web_r[] = $value.'_web';
+						          }
+					        	}
+					        }
 
-					    //     foreach ($img_web_r as $value) {
-					    //     	unset($img_r[$value]);
-					    //     }
-					    //     echo '<br>removed count: '. count($img_web_r);
-									// echo '<br>after removed count: '. count($img_r);
+					        foreach ($img_web_r as $value) {
+					        	unset($img_r[$value]);
+					        }
+					        echo '<br>removed count: '. count($img_web_r);
+									echo '<br>after removed count: '. count($img_r);
 
-									// echo '<br><pre>';
-									// print_r($img_r);
-									// echo '</pre>';
+									echo '<br><pre>';
+									print_r($img_r);
+									echo '</pre>';
 								//export all artists
 									// $artist_r = array();
 									// $query_attaches = new WP_Query(array('post_type' => 'artists', 'post_status' => 'any', 'order' =>  'ASC', 'posts_per_page' => -1));
