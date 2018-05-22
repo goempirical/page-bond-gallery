@@ -70,12 +70,12 @@ $artist_pdf = array (
     '6854' => '9445',
     '6903' => '9476',
 );
-                                // foreach ($artist_pdf as $key => $value) {
-                                //  if(!add_post_meta( $key, 'artist_content_artist_cv_file', $value, true )){
-                                //      update_post_meta( $key, 'artist_content_artist_cv_file', $value);
-                                //  }
-                                //  add_post_meta( $key, '_artist_content_artist_cv_file', "field_5ac2aa6c6bd15", true );
-                                // }
+                    // foreach ($artist_pdf as $key => $value) {
+                    //  if(!add_post_meta( $key, 'artist_content_artist_cv_file', $value, true )){
+                    //      update_post_meta( $key, 'artist_content_artist_cv_file', $value);
+                    //  }
+                    //  add_post_meta( $key, '_artist_content_artist_cv_file', "field_5ac2aa6c6bd15", true );
+                    // }
 								?>
 							</div>
 							</div>

@@ -24,8 +24,28 @@ $container = get_theme_mod( 'understrap_container_type' );
 									$img_r = array();
 									$query_attaches = new WP_Query(array('post_type' => 'exhibitions', 'order' =>  'ASC', 'posts_per_page' => -1));
 									while ($query_attaches->have_posts()) : $query_attaches->the_post(); 
-										$file_name = $post->post_title;
-										$img_r[$file_name] = $post->ID;
+										//$file_name = $post->post_title;
+										//$img_r[$file_name] = $post->ID;
+										// $img_r[$file_name] = $post->ID;
+
+								//   Update exhibit publish date
+										// $exhibition_content = get_field('exhibition_content');
+										// if(strpos($exhibition_content['date_text'], ' — ') !== false) {
+										//   $date_text =  explode(' — ', $exhibition_content['date_text']);
+										// 	$file_name = date('Y-m-d H:i:s', strtotime($date_text[0]));
+										// } elseif(strpos($exhibition_content['date_text'], ' &mdash; ') !== false) {
+										//   $date_text =  explode(' &mdash; ', $exhibition_content['date_text']);
+										// 	$file_name = date('Y-m-d H:i:s', strtotime($date_text[0]));
+										// } else {
+										//   $file_name = $exhibition_content['date_text'];
+										// }
+										// wp_update_post(
+										//     array (
+										//         'ID'            => $post->ID, // ID of the post to update
+										//         'post_date'     => $file_name,
+										//         'post_date_gmt' => get_gmt_from_date( $file_name )
+										//     )
+										// );
 									endwhile; 
 									wp_reset_query(); //Reset to post parent
 
