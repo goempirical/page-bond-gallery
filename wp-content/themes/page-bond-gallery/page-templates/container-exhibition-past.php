@@ -41,7 +41,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						$query  = new WP_Query( array(
 							'post_type' => 'exhibitions',
 							'sort' => 'DESC',
-							'tax_query' => $past_range_year 
+							'tax_query' => $past_range_year,
+							'posts_per_page' => -1 
 						));
 						
 						$post_tags = wp_get_post_tags($query->ID);

@@ -39,8 +39,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<div class="col-md-12">
 										<div id="gallery-title" class="head_content box-stroke__bottom">
 											<div>
-												<h1 class="gallery-title"><?php echo the_title();?></h1>
-												<p><?php echo $exhibition_content['date_text'];?></p> 
+												<h1 class="gallery-title"><?php echo the_title(); ?></h1>
+												<p><?php echo $exhibition_content['date_text']; ?></p> 
 											</div>
 												
 											<div class="aux_links" >
