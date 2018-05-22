@@ -105,7 +105,7 @@ function nav_class_active ($classes, $item) {
 }
 
 //Adding another image size for gallery
-add_image_size( 'slider', 1200, 645, true);
+add_image_size( 'slider', 1200, 645, false);
 add_image_size( 'post', 732, 383, true);
 add_image_size( 'lightbox', 2000, 2000, false);
 
