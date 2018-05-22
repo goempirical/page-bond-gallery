@@ -10203,9 +10203,6 @@ article.post:not(:last-child) {
   text-align: center;
   outline: none; }
 
-.main-content-area {
-  min-height: 55vh; }
-
 @media (min-width: 992px) {
   .grid-container,
   .main-content-area {
