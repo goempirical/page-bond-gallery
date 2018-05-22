@@ -140,7 +140,8 @@ nav.navbar{
 .navbar-brand { 
   padding: 0; 
   display: grid; 
-  margin-bottom: 2px; 
+  margin-bottom: 2px;
+  max-width: 70%;
 
   img {
     width: 100%;
@@ -178,16 +179,20 @@ nav.navbar{
   }
 }
 
-.navbar-light .navbar-nav .nav-link {
-  font-family: $body-font;
-  font-size: 16px; 
-  line-height: 21px; 
-  letter-spacing: 0.65px; 
-  color: $grey-color;
-}
+.navbar-light .navbar-nav {
+  text-align: center;
 
-.navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle {
-  color: $navbar-light-active-color;
+  .nav-link {
+    font-family: $body-font;
+    font-size: 16px; 
+    line-height: 21px; 
+    letter-spacing: 0.65px; 
+    color: $grey-color;
+  }
+
+  .current-menu-ancestor a.nav-link.dropdown-toggle {
+    color: $navbar-light-active-color;
+  }
 }
 
 .navbar-expand-md .navbar-nav .nav-link{
@@ -197,12 +202,16 @@ nav.navbar{
   padding-top: 24px;
 }
 
-.navbar>.container, 
-.navbar>.container-fluid {
-  align-items: baseline;
+.navbar-toggler {
+  border:0;
 }
 
 @media (min-width: $bp-large) {
+  .navbar>.container, 
+  .navbar>.container-fluid {
+    align-items: baseline;
+  }
+
   .container {
     max-width: 1190px; 
   } 
@@ -330,7 +339,7 @@ div[class^="col"] {
   .menu {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 29px;
+    margin-bottom: 50px;
     li {
       margin-bottom: 9px;
 
@@ -693,7 +702,6 @@ article.post {
   }
 
   h2 {
-    margin-top:12px;
     text-transform: uppercase;
   }
 
