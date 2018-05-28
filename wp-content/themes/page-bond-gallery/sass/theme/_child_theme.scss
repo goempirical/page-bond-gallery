@@ -225,6 +225,16 @@ nav.navbar{
 
     @media (min-width: $bp-large) and (min-height: 700px){
       padding-bottom: calc( 100vh - 250px );
+
+      .owl-item img {
+        width: auto;
+        height: calc(100vh - 250px);
+        max-width: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
     }
   }
 
