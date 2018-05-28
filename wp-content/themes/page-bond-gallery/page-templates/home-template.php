@@ -16,14 +16,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 			<div class="col-md-12 content-area" id="primary">
 			 <main class="site-main" id="main" role="main">
+			 	<?php
+			 		$ex1 = get_field('exhibition_feature_1');
+					$ex2 = get_field('exhibition_feature_2');
+					
+					$two = $ex2['show_2'] ? true : false;
+					$two = $ex2['link'] ? $two : false;
+
+					if($two){
+						?>
+				<div class="row">
+					<div class="col-md-6 content-area">
+						<?php
+					}
+				?>
 				<div class="owl-carousel owl-theme owl-loaded">
 					<div class="owl-stage-outer">
 						<div class="owl-stage" >
 						<?php 
 						/* HEADER EXHIBITION MANUAL  */
-						$link = get_field('link') ? get_field('link') : false;
-						if( get_field('slides') ) : 
-						foreach( get_field('slides') as $slide ) : ?>
+						
+						$link = $ex1['link'] ? $ex1['link'] : false;
+						if( $ex1['slides'] ) : 
+						foreach( $ex1['slides'] as $slide ) : ?>
 						<div class="owl-item no__full">
 							<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
 								<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
@@ -36,18 +51,61 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 				</div>
 			</div>
-				<?php
-					$group = get_field('exhibit_info');
-					if( get_field('exhibit_info') ) : 
+			<?php
+				$group = $ex1['exhibit_info'];
+				if( $ex1['exhibit_info'] ) : 
+			?>
+			<section class="banner-info">
+				<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
+					<h1><?php echo $group['info_title'] ?></h1>
+				<?php echo $link ? '</a>' : ''; ?>
+				<h2><?php echo $group['info_date_text'] ?></h2>
+			</section>
+			<?php 
+				endif;
+			?>
+	 	<?php
+			if($two){
 				?>
-				<section class="banner-info">
-					<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
-						<h1><?php echo $group['info_title'] ?></h1>
-					<?php echo $link ? '</a>' : ''; ?>
-					<h2><?php echo $group['info_date_text'] ?></h2>
-				</section>
-				<?php 
-					endif;
+			</div>
+			<div class="col-md-6 content-area">
+				<div class="owl-carousel owl-theme owl-loaded">
+					<div class="owl-stage-outer">
+						<div class="owl-stage" >
+						<?php 
+						/* HEADER EXHIBITION MANUAL  */
+						$link = $ex2['link'] ? $ex2['link'] : false;
+						if( $ex2['slides'] ) : 
+						foreach( $ex2['slides'] as $slide ) : ?>
+						<div class="owl-item no__full">
+							<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
+								<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
+							<?php echo $link ? '</a>' : ''; ?> 
+						</div>
+						<?php 
+						endforeach;
+						endif;
+						?>
+					</div>
+				</div>
+			</div>
+			<?php
+				$group = $ex2['exhibit_info'];
+				if( $ex1['exhibit_info'] ) : 
+			?>
+			<section class="banner-info">
+				<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
+					<h1><?php echo $group['info_title'] ?></h1>
+				<?php echo $link ? '</a>' : ''; ?>
+				<h2><?php echo $group['info_date_text'] ?></h2>
+			</section>
+			<?php 
+				endif;
+			?>
+		</div>
+	</div>
+						<?php
+					}
 				?>
 			<?php
 					/* LIST 2 RECENT POST NEWS */

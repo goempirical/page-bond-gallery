@@ -9816,7 +9816,7 @@ p {
   color: #4d4d4d; }
 
 nav.navbar {
-  padding: 3rem 1rem; }
+  padding: 1rem 1rem; }
 
 .navbar-brand {
   padding: 0;
@@ -9873,6 +9873,9 @@ nav.navbar {
 .home .owl-carousel .owl-stage-outer {
   height: 0;
   padding-bottom: 55%; }
+  @media (min-width: 1200px) and (min-height: 700px) {
+    .home .owl-carousel .owl-stage-outer {
+      padding-bottom: calc( 100vh - 250px); } }
 
 .home .banner-info {
   margin-top: 8px;

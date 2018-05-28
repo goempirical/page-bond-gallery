@@ -134,7 +134,7 @@ p {
 }
 
 nav.navbar{ 
-  padding: 3rem 1rem; 
+  padding: 1rem 1rem; 
 }
 
 .navbar-brand { 
@@ -222,6 +222,10 @@ nav.navbar{
   .owl-carousel .owl-stage-outer {
     height: 0;
     padding-bottom: 55%;
+
+    @media (min-width: $bp-large) and (min-height: 700px){
+      padding-bottom: calc( 100vh - 250px );
+    }
   }
 
   .banner-info {
