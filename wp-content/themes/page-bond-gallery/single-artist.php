@@ -91,16 +91,25 @@ $container   = get_theme_mod( 'understrap_container_type' );
 										<div class="col-md-12">
 
 											<ul class="nav nav-tabs box-stroke" id="tabArtist" role="tablist" >
-
-												<li class="nav-item">
-													<a class="nav-link active" id="artist_cv_tab" data-toggle="tab" href="#artist_cv" role="tab" aria-controls="artist_cv" aria-selected="true">Artist CV</a>
-												</li>
+												<?php if($my_artist_content['artist_bio']){ 
+												 ?>
 												<li class="nav-item">
 													<a class="nav-link" id="artist_bio_tab" data-toggle="tab" href="#artist_bio" role="tab" aria-controls="artist_bio" aria-selected="false">Bio</a>
 												</li>
+												<?php
+												 }
+												 if($my_artist_content['artist_cv']){ ?>
+												<li class="nav-item">
+													<a class="nav-link active" id="artist_cv_tab" data-toggle="tab" href="#artist_cv" role="tab" aria-controls="artist_cv" aria-selected="true">Artist CV</a>
+												</li>
+												<?php
+												 }
+												 if($my_artist_content['artist_statement']){ 
+												 ?>
 												<li class="nav-item">
 													<a class="nav-link " id="artist_state_tab" data-toggle="tab" href="#artist_state" role="tab" aria-controls="artist_state" aria-selected="false">Statement</a>
 												</li>
+												<?php } ?>
 												<li class="nav-item">
 													<a class="nav-link " id="artist_pe_tab" data-toggle="tab" href="#artist_pe" role="tab" aria-controls="artist_pe" aria-selected="false">Past Exhibitions</a>
 												</li>
@@ -115,15 +124,15 @@ $container   = get_theme_mod( 'understrap_container_type' );
 									
 									<div class="tab-content" id="tabArtistContent">
 
-										<div class="tab-pane fade show active" id="artist_cv" role="tabpanel" aria-labelledby="artist_cv_tab"> 
-											<div class="col-md-6 p-0">
-												<?php echo $my_artist_content['artist_cv'];?> 
-											</div>
-										</div>
-
 										<div class="tab-pane fade " id="artist_bio" role="tabpanel" aria-labelledby="artist_bio_tab"> 
 											<div class="col-md-6 p-0">
 													<?php echo $my_artist_content['artist_bio'];?>
+											</div>
+										</div>
+
+										<div class="tab-pane fade show active" id="artist_cv" role="tabpanel" aria-labelledby="artist_cv_tab"> 
+											<div class="col-md-6 p-0">
+												<?php echo $my_artist_content['artist_cv'];?> 
 											</div>
 										</div>
 										
