@@ -9875,7 +9875,14 @@ nav.navbar {
   padding-bottom: 55%; }
   @media (min-width: 1200px) and (min-height: 700px) {
     .home .owl-carousel .owl-stage-outer {
-      padding-bottom: calc( 100vh - 250px); } }
+      padding-bottom: calc( 100vh - 250px); }
+      .home .owl-carousel .owl-stage-outer .owl-item img {
+        width: auto;
+        height: calc(100vh - 250px);
+        max-width: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); } }
 
 .home .banner-info {
   margin-top: 8px;
