@@ -78,7 +78,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<?php 
 										if( $exhibition_content['exhibition_images'] ) : 
 													foreach( $exhibition_content['exhibition_images'] as $slide ) : ?>
-												<div class="col-md-4 grid-item"> 
+												<div class="col-6 col-md-4 grid-item"> 
 													<a href="#" class="gallery-image"><img src="<?php echo $slide['sizes']['thumbnail'] ?>"></a>
 												</div>
 											<?php 

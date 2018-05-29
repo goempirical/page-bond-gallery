@@ -7,7 +7,7 @@
 
 $artist_content = get_field('artist_content');
 ?>
-<div class="col-md-4 grid-item">
+<div class="col-6 col-md-4 grid-item">
 	<a href="<?php the_permalink(); ?>">
 		<div class="img-wrap">
 			<img src="<?php echo $artist_content['artist_featured_image']['sizes']['thumbnail'] ?>" alt="<?php echo the_title();?>">

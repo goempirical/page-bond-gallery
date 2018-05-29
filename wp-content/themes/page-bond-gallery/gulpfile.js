@@ -181,6 +181,7 @@ gulp.task('scripts', function() {
         basePaths.dev + 'js/owl-carousel.js',
         basePaths.js  + 'slider_settings.js',
         basePaths.dev + 'js/skip-link-focus-fix.js',
+        basePaths.dev + 'js/child_theme.js',
     ];
   gulp.src(scripts)
     .pipe(concat('child-theme.min.js'))
