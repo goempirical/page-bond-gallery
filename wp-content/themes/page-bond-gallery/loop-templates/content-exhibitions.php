@@ -4,7 +4,7 @@
  *
  * @package understrap
  */
-$artist_content = get_field('artist_content');
+$exhibition_content = get_field('exhibition_content');
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -12,7 +12,7 @@ $artist_content = get_field('artist_content');
 		<?php 
 			the_title( 
 				sprintf( 
-					'<a href="%s" rel="bookmark" ><h2>Artist: ', 
+					'<a href="%s" rel="bookmark" ><h2>Exhibition: ', 
 					esc_url(get_permalink()) 
 				),
 				'</h2></a>' 
@@ -23,7 +23,11 @@ $artist_content = get_field('artist_content');
 
 	<a href="<?php the_permalink(); ?>">
 		<div class="img-wrap">
-			<img src="<?php echo $artist_content['artist_featured_image']['sizes']['large'] ?>" alt="<?php echo the_title();?>">
+			<?php	
+			if( $exhibition_content['exhibitions_featured_image'] ) {
+				echo wp_get_attachment_image( $exhibition_content['exhibitions_featured_image'], 'large' );
+			}
+			?>
 		</div>
 	</a>
 </article><!-- #post-## -->

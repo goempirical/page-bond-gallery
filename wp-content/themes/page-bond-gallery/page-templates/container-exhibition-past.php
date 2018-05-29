@@ -88,7 +88,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							while ( $query->have_posts() ) : $query->the_post(); 
 								
 							$exhibition_content = get_field('exhibition_content'); ?>
-							<div class="col-md-4 grid-item">
+							<div class="col-6 col-md-4 grid-item">
 								<a href="<?php the_permalink(); ?>">
 									<div class="img-wrap">
 									<?php	
