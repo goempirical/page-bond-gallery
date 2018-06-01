@@ -26,8 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="site-info">
 							<div class="row">
 								<div class="col-md-8">
-									<p>1625 West Main Street  Richmond, Virginia  |  804 359 3633  |  MAILING LIST</p>
-									<p>TUESDAY—SATURDAY 10—5PM OR BY APPOINTMENT</p>
+									<?php the_field('footer_text', 'option'); ?>
 								</div>
 								<div class="col-md-4">
 									<div class="resize_icons">
