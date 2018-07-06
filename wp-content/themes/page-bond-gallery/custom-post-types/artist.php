@@ -24,7 +24,7 @@
           'query_var' => true,
           'rewrite' => true,
           'capability_type' => 'post',
-          'hierarchical' => false,
+          'hierarchical' => true,
           'menu_position' => 5,
           'supports' => array('title', 'editor'),
           'rewrite' => array('slug' => 'artist', 'with_front' => FALSE)
