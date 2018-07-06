@@ -30,12 +30,11 @@ $container   = get_theme_mod( 'understrap_container_type' );
 					?>
 				</header><!-- .page-header -->
 
-				<div class="aux_content box-stroke adding__padding__top">
-					<div class="row">
+				<div class="aux_content">
+					<div class="row justify-content-between">
 
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<div class="col-md-8 col-xl-7 content-area" id="primary">
 
 			<main class="site-main" id="main">
 					<?php /* Start the Loop */ ?>

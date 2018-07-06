@@ -28,12 +28,12 @@ $container  = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-11 main-content-area">
 			
-			<div class="aux_content box-stroke adding__padding__top">
+			<div class="aux_content">
 			
-			<div class="row">
+			<div class="row justify-content-between">
 
-			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+
+			<div class="col-md-8 col-xl-7 content-area" id="primary">
 
 			<main class="site-main" id="main">
 
