@@ -7,12 +7,6 @@
 
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
-	<header class="entry-header">
-
-		<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-	</header><!-- .entry-header -->
 	<?php //echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
@@ -28,7 +22,7 @@
 									   'container_class' => 'menu-side-container'  ) );
 						?> 
 
-					<div class="row row__space__bottom">
+					<div class="row">
 
 						<div class="col-md-4 grid-item">
 
@@ -55,7 +49,7 @@
 
 					</div>
 					
-				<div class="box-stroke">
+				<div class="box-stroke policy-section">
 
 					<?php echo get_field('contact_policy'); ?>
 

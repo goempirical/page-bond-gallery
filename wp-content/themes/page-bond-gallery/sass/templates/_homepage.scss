@@ -1,0 +1,58 @@
+/* Home Page */
+.home {
+  .owl-carousel .owl-stage-outer {
+    height: 0;
+    padding-bottom: 55%;
+
+    @media (min-width: $bp-large) and (min-height: 700px){
+      padding-bottom: 0;
+      height: calc(100vh - 250px);
+      max-height: calc(50vw - 100px);
+
+      .owl-item img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+    }
+  }
+
+  .banner-info {
+    margin-top:8px;
+    margin-bottom:60px;
+
+    a {
+      color:$grey-color;
+    }
+  }
+}
+
+section.wrapper-recents {
+  margin-top: 53px;
+
+  article {
+
+
+    a {
+      color: $blue;
+
+      &:before {
+        content: '\2014';
+        display: block;
+        color: $grey-color;
+      }
+    }
+
+    p {
+      max-width: 392px;
+    }
+  }
+}
+
+.home section.wrapper-recents p {
+  margin-top: 25px;
+}

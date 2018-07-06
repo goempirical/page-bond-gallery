@@ -18,7 +18,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<main class="site-main" id="main" role="main">
 					<div class="row justify-content-center">
 						<div class="col-md-11 grid-container">
-							<div class="box-stroke adding__padding__top">
+							<div>
 								<?php 
 									$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 									$query_artists = new WP_Query(array('post_type' => 'artist', 'order' =>  'ASC', 'orderby' => 'title', 'posts_per_page' => 12, 'paged' => $paged ));

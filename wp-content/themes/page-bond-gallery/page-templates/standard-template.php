@@ -36,7 +36,7 @@ $put_boxStroke = 'box-stroke';
 										'container_class' => 'menu-side-container'  ) );?>
 								<?php endif;?>
 								<?php /* GALLERY STANDARD */ ?> 
-									<div class="content full__img <?php echo $put_boxStroke; ?> adding__space adding__padding__top">
+									<div class="content full__img">
 									<?php $gallery_stand = get_field('page_image_gallery'); $size = 'slider';?>
 									
 									<?php if ( $gallery_stand ) :  ?>
@@ -99,12 +99,13 @@ $put_boxStroke = 'box-stroke';
 												</div>
 											</div>
 										<?php endforeach; ?>
-								<?php endif; ?>
+								<?php else: ?>
 								<?php while ( have_posts() ) : the_post(); ?>
-									<div class="aux_content <?php echo $put_boxStroke; ?>  adding__space pt-5">
+									<div class="aux_content <?php echo $put_boxStroke; ?>">
 										<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 									</div>
 								<?php endwhile; // end of the loop. ?>
+								<?php endif; ?>
 							</div>	
 
 					</div> <!-- END ROW -->
