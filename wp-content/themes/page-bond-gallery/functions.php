@@ -115,7 +115,7 @@ function add_search_form($items, $args) {
     if( $args->theme_location == 'primary' ) {
         $search_query = get_search_query(); 
         $search_query = $search_query === 'search' ? '' : $search_query;
-        $items .= '<li class="search"><a href="#" class="search-icon">Show Search</a><form role="search" method="get" id="searchform" action="'.home_url( '/' ).'"><input type="text" value="'. $search_query.'" placeholder="search" name="s" id="s" /><input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" /></form></li>';
+        $items .= '<li class="search"><a href="#" class="search-icon">Show Search</a><form role="search" method="get" id="searchform-header" class="searchform" action="'.home_url( '/' ).'"><input type="text" value="'. $search_query.'" placeholder="SEARCH ..." name="s" id="s" /><input class="searchsubmit" type="submit" id="searchsubmit-header" value="'. esc_attr__('Search') .'" /></form></li>';
     }
     return $items;
 }
