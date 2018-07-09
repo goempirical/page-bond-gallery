@@ -239,13 +239,14 @@ div[class^="col"] {
 
 article.hentry {
   padding-bottom: 34px;
+  @include font-smoothing;
 
   & > iframe, & > img {
     margin: 16px 0;
   }
 
   &:not(:last-child) {
-    border-bottom: solid 0.5px $grey-border;
+    background: url(../img/hr.svg) repeat-x bottom left;
     margin-bottom: 50px;
   }
   
