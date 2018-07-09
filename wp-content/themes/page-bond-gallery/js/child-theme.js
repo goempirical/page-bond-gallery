@@ -7376,7 +7376,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
         e.preventDefault();
 
         var gallery = jQuery('#gallery-title');
-        var $grid_item = jQuery(this).parent();
+        var $grid_item_index = jQuery(this).parent().index();
+        var $active_owl_index = jQuery('.owl-carousel .active').index();
         var content = jQuery( '.toggle__content' );
 
         if(gallery.length > 0){
@@ -7389,12 +7390,18 @@ Object.defineProperty(exports, '__esModule', { value: true });
         
         toggle_artist.toggleClass('active')
         
-        toggle_artist.text(( toggle_artist.hasClass('active') ) ? 'Gallery' : 'Thumbnails');
+        toggle_artist.text(( toggle_artist.hasClass('active') ) ? 'Slideshow' : 'Thumbnails');
+        jQuery('.owl-carousel .active').addClass('first-view');
 
-        owl.trigger('to.owl.carousel', [$grid_item.index(), 1]);
-        jQuery( c_counter[0] ).text( $grid_item.index() + 1 );
-        jQuery(content[0]).toggleClass('active');
-        jQuery(content[1]).toggleClass('active');
+        owl.trigger('to.owl.carousel', [$grid_item_index, 1]);
+        jQuery( c_counter[0] ).text( $grid_item_index + 1 );
+        jQuery(content).toggleClass('active');
+
+        var timeout = $grid_item_index === $active_owl_index ? 1 : 1000;
+
+        setTimeout(function(){ 
+            jQuery('.first-view').removeClass('first-view');
+        }, timeout);
     });
 
 });

@@ -14,7 +14,7 @@
 			$search_query = $search_query === 'search' ? '' : $search_query;
 		?>
 		<input class="field form-control" id="s" name="s" type="text"
-			placeholder="<?php esc_attr_e( 'Search &hellip;', 'understrap' ); ?>" value="<?php echo $search_query; ?>">
+			placeholder="<?php esc_attr_e( 'SEARCH &hellip;', 'understrap' ); ?>" value="<?php echo $search_query; ?>">
 		<span class="input-group-append">
 			<input class="submit btn btn-primary searchsubmit" id="searchsubmit" name="submit" type="submit"
 			value="<?php esc_attr_e( 'Search', 'understrap' ); ?>">
