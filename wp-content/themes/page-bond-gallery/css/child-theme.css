@@ -10003,7 +10003,14 @@ article.hentry {
       background-color: #aaaaaa; }
 
 .owl-carousel .owl-item {
-  background: white; }
+  background: white;
+  background: #fff;
+  transition: opacity 1s ease !important;
+  opacity: 0; }
+  .owl-carousel .owl-item.active {
+    opacity: 1; }
+  .owl-carousel .owl-item:not(.active) {
+    pointer-events: none; }
   .owl-carousel .owl-item.no__full img.slide-image {
     width: initial;
     margin: 0 auto; }
@@ -10017,6 +10024,9 @@ article.hentry {
     margin-top: 20px; }
     .owl-carousel .owl-item section p {
       margin-bottom: 0px; }
+
+.slideshow .owl-carousel .owl-item.first-view img {
+  opacity: 0; }
 
 .featherlight .featherlight-content {
   padding: 8vh 10vh 6vh; }

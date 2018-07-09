@@ -32,7 +32,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 								</div>
 								<?php $my_artist_content = get_field('artist_content'); ?> 
 								<!--List all images from an artist--> 
-								<div class="toggle__content">
+								<div class="toggle__content slideshow">
 									<div class="owl-carousel next owl-theme owl-loaded">
 										<div class="owl-stage-outer">
 											<div class="owl-stage" >

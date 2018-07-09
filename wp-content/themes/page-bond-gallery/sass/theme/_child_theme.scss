@@ -373,6 +373,18 @@ article.hentry {
   .owl-item {
     background: white;
 
+    background: #fff;
+    transition: opacity 1s ease!important;
+    opacity: 0;
+
+    &.active {
+      opacity:1;
+    }
+
+    &:not(.active) {
+      pointer-events: none;
+    }
+
     &.no__full img.slide-image {
       width: initial;
       margin: 0 auto;
@@ -393,6 +405,10 @@ article.hentry {
       }
     }
   }
+}
+
+.slideshow .owl-carousel .owl-item.first-view img {
+  opacity:0;
 }
 
 .featherlight .featherlight-content {
