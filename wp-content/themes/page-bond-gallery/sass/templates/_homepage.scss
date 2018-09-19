@@ -25,6 +25,11 @@
 
     @media (min-width: $bp-large) and (min-height: 700px){
 
+      .owl-stage,
+      .owl-item {
+        height: 100%;
+      }
+
       .owl-item a {
         display: block;
         height: 100%;
