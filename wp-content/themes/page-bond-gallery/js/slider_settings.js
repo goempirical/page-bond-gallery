@@ -1,8 +1,6 @@
  
  jQuery(document).ready( function () {
     var owl = jQuery('.owl-carousel');
-    var toggle_artist = jQuery('.toggle_artist');
-    var gallery_item = jQuery('.gallery-image');
     var c_counter = owl.find(".owl-counter").children();
 
     var stand_obj = {
@@ -44,52 +42,4 @@
         jQuery( c_counter[0] ).text( index_count );
         jQuery( c_counter[1] ).text( '/' + global_count );
     }
-
-    toggle_artist.on('click', function(e) {
-        e.preventDefault();
-        
-        var $self = jQuery(this);
-        
-        var content = jQuery( '.toggle__content' );
-        
-        $self.toggleClass('active')
-        
-        $self.text(( $self.hasClass('active') ) ? 
-                    'Thumbnails' : 'Slideshow');
-        jQuery(content[0]).toggleClass('active');
-        jQuery(content[1]).toggleClass('active');
-    });
-
-    gallery_item.on('click', function(e) {
-        e.preventDefault();
-
-        var gallery = jQuery('#gallery-title');
-        var $grid_item_index = jQuery(this).parent().index();
-        var $active_owl_index = jQuery('.owl-carousel .active').index();
-        var content = jQuery( '.toggle__content' );
-
-        if(gallery.length > 0){
-            if(jQuery(window).scrollTop() > 100){
-                jQuery('html, body').animate({
-                    scrollTop: gallery.offset().top - 50
-                }, 500, 'linear');
-            }
-        }
-        
-        toggle_artist.toggleClass('active')
-        
-        toggle_artist.text(( toggle_artist.hasClass('active') ) ? 'Slideshow' : 'Thumbnails');
-        jQuery('.owl-carousel .active').addClass('first-view');
-
-        owl.trigger('to.owl.carousel', [$grid_item_index, 1]);
-        jQuery( c_counter[0] ).text( $grid_item_index + 1 );
-        jQuery(content).toggleClass('active');
-
-        var timeout = $grid_item_index === $active_owl_index ? 1 : 1000;
-
-        setTimeout(function(){ 
-            jQuery('.first-view').removeClass('first-view');
-        }, timeout);
-    });
-
 });

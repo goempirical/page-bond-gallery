@@ -70,7 +70,7 @@ div[class^="col"] {
   
   &.adding__padding__bottom {
     padding-bottom: 5px;
-    margin-bottom: 34px;
+    margin-bottom: $block-space;
   }
 }
 
@@ -107,7 +107,8 @@ div[class^="col"] {
       margin-bottom: 9px;
 
       & > a {
-        color: $grey-color; 
+        color: $grey-color;
+        text-transform: capitalize;
       }
 
       &.active > a {
@@ -119,64 +120,6 @@ div[class^="col"] {
       }
     }
   }
-}
-
-.tab-content, .height_stand {
-  min-height: 300px;
-}
-
-.tab-content {
-  & > #artist_pe {
-    ul > li {
-      a {
-        h2 { 
-          margin-bottom: unset;
-          color: $grey-color;
-          text-transform: uppercase;
-        }
-        &:hover > h2 {
-          color: $grey-active;
-        }
-      }
-
-      margin-bottom: 34px;
-    }
-  }
-}
-
-.nav-tabs {
-    border-bottom: none;
-    margin-top: 28px;
-    padding-top: 0;
-
-    .nav-item {
-      &.flex-right {
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-end;
-
-        .nav-link {
-          padding-right: 0px;
-          min-width: 50px;
-        }
-      }
-    }
-  
-    .nav-link {
-      color: $grey-color;
-      border: none !important;
-      padding-right: 1.5em;
-      
-      &.active, &:hover {
-        color: $grey-active;
-        border: inherit;
-        background-color: transparent;
-      }
-
-      &:first-child {
-        padding-left: 0px;
-      }
-    }
 }
 
 .widget-area {
@@ -260,18 +203,6 @@ article.hentry {
   }
 }
 
-.tab-content > div {
-  margin-top: 16px;
-}
-
-#artist_li a {
-  color: $grey-color;
-
-  &:hover {
-    color:$grey-active;
-  }
-}
-
 .blogroll-footer {
   margin-bottom: 50px;
 }
@@ -280,7 +211,7 @@ article.hentry {
   .owl-counter {
     position: absolute;
     right: 0px;
-    bottom: 0;
+    bottom: $block-space;
     line-height: 1;
 
     span {
@@ -392,7 +323,7 @@ article.hentry {
       @media (min-width: $bp-med) {
         width: auto;
         margin: 0 auto;
-        height: 60vh;
+        height: calc( 95vh - 440px );
         max-width: none;
       }
     }
@@ -407,12 +338,16 @@ article.hentry {
   }
 }
 
-.slideshow .owl-carousel .owl-item.first-view img {
-  opacity:0;
+.slideshow .owl-carousel {
+  padding-bottom: $block-space;
+
+  .owl-item.first-view img {
+    opacity:0;
+  }
 }
 
 .featherlight .featherlight-content {
-  padding: 8vh 10vh 6vh;
+  padding: 5vh;
 }
 
 .row.space__between > div[class^="col"] {

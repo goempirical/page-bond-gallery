@@ -23,12 +23,12 @@ $image_attributes = wp_get_attachment_image_src( $work, 'slider' );
 
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-						<div class="row -inner justify-content-between">
+						<div class="row -inner justify-content-between mb-5">
 							<div class="col-md-4">
 								<?php the_content(); ?>
 
 								<?php if($work && $artist) { ?>
-									<div class="my-4">
+									<div class="mt-4">
 										<a href="<?php echo $image_attributes[0]; ?>"><?php echo wp_get_attachment_image( $work, 'medium' ); ?></a>
 										<div class="mt-3">
 											<?php
@@ -42,13 +42,13 @@ $image_attributes = wp_get_attachment_image_src( $work, 'slider' );
 								<?php } ?>
 							</div>
 							<div class="col-md-7">
-								<?php the_field('form_embed'); ?>
 								<div id="artwork-data">
 									<p><?php echo get_the_title($artist); ?></p>
 									<?php $info = get_field('information', $work);
 									echo $info ? $info : '<p><em>Untitled</em></p>'; ?>
 									<p><?php echo '( '. $image_attributes[0] .' )'; ?></p>
 								</div>
+								<?php the_field('form_embed'); ?>
 							</div>
 						</div>
 					<?php endwhile; // end of the loop. ?>
