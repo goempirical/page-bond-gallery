@@ -80,7 +80,7 @@ $put_boxStroke = 'box-stroke';
 						<?php $team_stand = get_field('team'); ?>
 							<?php foreach( $team_stand as $member ) : ?>
 								<div class="row">
-									<div class="col-md-4 grid-item"> <?php echo wp_get_attachment_image($member['photo']['ID'], 'thumbnail'); ?> </div>
+									<div class="col-md-4 grid-item"> <?php echo wp_get_attachment_image($member['photo']['ID'], 'medium'); ?> </div>
 									<div class="col-md-8 grid-item">
 										<?php $content_member = $member['content']; ?> 
 										<div class="content_member">
