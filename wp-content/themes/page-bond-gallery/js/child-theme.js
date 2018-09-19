@@ -7450,11 +7450,13 @@ jQuery(function($){
     // INQUIRE FORM
 
     if($('.pb-inquire-input')){
-      var artworkData = $('#artwork-data').html();
+      $('#artwork-data p').each( function() {
+      	var artworkData = $(this).html();
+      	var inputVal = $('.pb-inquire-input textarea').val();
+      	console.log(artworkData);
 
-      console.log(artworkData);
+      	$('.pb-inquire-input textarea').val( inputVal + artworkData + "\n");
 
-      $('.pb-inquire-input textarea').val(artworkData);
-
+      });
     }
 });
