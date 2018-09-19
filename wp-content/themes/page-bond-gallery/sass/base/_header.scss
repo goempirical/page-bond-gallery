@@ -33,7 +33,7 @@ nav.navbar{
     ul.dropdown-menu {
       background-color: rgba(255,255,255,.7);
       border: none;
-      text-transform: uppercase;
+      text-transform: capitalize;
       padding-top: 8px;
       margin: 0px;
       border-radius: 0;
@@ -108,19 +108,37 @@ nav.navbar{
 }
 
 .navbar .search {
-  padding-top: 24px;
-  width: 1.15em;
   position: relative;
-  margin: 0 0 0 11px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 18px;
+
+  .search-icon {
+    transition: max-width $anim-dur/4 ease-out, opacity $anim-dur/4 ease-out;
+    max-width: 3em;
+    margin-top: 7px;
+  }
 
   .searchform {
-    right: -0.25em;
-    position: absolute;
-    margin-top: 14px;
+    max-width:0;
+    overflow: hidden;
+    box-sizing: border-box;
+    opacity:0;
+    transition: max-width $anim-dur/4 ease-out, opacity $anim-dur/4 ease-out;
+    height: 30px;
 
-    @media (max-width: $bp-large) {
-      right: 50%;
-      transform: translateX(50%);
+    .searchsubmit {
+      background-color: transparent;
+    }
+
+    &.show-form {
+      opacity: 1;
+      max-width: 160px;
+
+      + a.search-icon {
+        opacity:0;
+        max-width:0;
+      }
     }
   }
 }
@@ -163,18 +181,11 @@ nav.navbar{
   padding: 0;
 }
 
-#searchsubmit-header {
-  background: none;
-}
-
 .search-icon + .searchform {
   opacity: 0;
   transition: opacity $anim-dur/4 ease;
 }
 
-.searchform.show-form {
-  opacity: 1;
-}
 
 @media (max-width: $bp-large) {
   .wrapper-navbar + .wrapper {
@@ -187,7 +198,7 @@ nav.navbar{
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 29px;
+  margin-bottom: $block-space;
 
   @media (min-width: $bp-med) {
     flex-direction: row;

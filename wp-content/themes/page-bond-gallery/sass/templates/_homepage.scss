@@ -21,6 +21,23 @@
     }
   }
 
+  .col-md-6 .owl-carousel .owl-stage-outer {
+
+    @media (min-width: $bp-large) and (min-height: 700px){
+
+      .owl-item a {
+        display: block;
+        height: 100%;
+      }
+
+      .owl-item img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
   .banner-info {
     margin-top:8px;
     margin-bottom: $block-space*2;

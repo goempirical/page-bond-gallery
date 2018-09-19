@@ -106,6 +106,7 @@ function nav_class_active ($classes, $item) {
 
 //Adding another image size for gallery
 add_image_size( 'slider', 1200, 645, false);
+add_image_size( 'gallery-thumb', 700, 466, true);
 add_image_size( 'post', 732, 383, true);
 add_image_size( 'lightbox', 2000, 2000, false);
 
@@ -115,7 +116,7 @@ function add_search_form($items, $args) {
     if( $args->theme_location == 'primary' ) {
         $search_query = get_search_query(); 
         $search_query = $search_query === 'search' ? '' : $search_query;
-        $items .= '<li class="search"><a href="#" class="search-icon">Show Search</a><form role="search" method="get" id="searchform-header" class="searchform" action="'.home_url( '/' ).'"><input type="text" value="'. $search_query.'" placeholder="SEARCH ..." name="s" id="s" /><input class="searchsubmit" type="submit" id="searchsubmit-header" value="'. esc_attr__('Search') .'" /></form></li>';
+        $items .= '<li class="search"><form method="get" id="searchform-header" class="searchform" action="'.home_url( '/' ).'" role="search"><label class="assistive-text sr-only" for="s">Search</label><div class="input-group"><input class="field form-control" id="s" name="s" type="text" placeholder="SEARCH …" value="wp all import"><span class="input-group-append"><input class="submit btn btn-primary searchsubmit" id="searchsubmit-header" name="submit" type="submit" value="Search"></span></div></form><a href="#" class="search-icon">Show Search</a></li>';
     }
     return $items;
 }

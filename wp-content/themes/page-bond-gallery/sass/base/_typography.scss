@@ -87,3 +87,7 @@ p, label, input {
 //  Icon Alter Spaces
 
 .fa:not(:last-of-type) {padding-right: 10px}
+
+.widget_categories > h3 {
+  display: none;
+}
