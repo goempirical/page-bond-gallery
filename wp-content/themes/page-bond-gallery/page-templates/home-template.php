@@ -39,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							?>
 							<div class="owl-item no__full">
 								<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
-									<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
+									<img src="<?php echo $slide['image']['sizes']['lightbox'] ?>" alt="<?php echo the_title();?>">
 								<?php echo $link ? '</a>' : ''; ?> 
 							</div>
 							<?php 
@@ -76,7 +76,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							foreach( $ex2['slides'] as $slide ) : ?>
 							<div class="owl-item no__full">
 								<?php echo $link ? '<a href="' . $link . '">' : ''; ?> 
-									<img src="<?php echo $slide['image']['sizes']['slider'] ?>" alt="<?php echo the_title();?>">
+									<img src="<?php echo $slide['image']['sizes']['lightbox'] ?>" alt="<?php echo the_title();?>">
 								<?php echo $link ? '</a>' : ''; ?> 
 							</div>
 							<?php 
