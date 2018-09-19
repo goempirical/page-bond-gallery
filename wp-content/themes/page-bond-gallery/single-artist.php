@@ -22,7 +22,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 								<div class="row">
 									<div class="col-md-12">
 										<div id="gallery-title" class="head_content box-stroke__bottom">
-												<h1><?php echo the_title();?></h1>
+												<h1><?php the_title();?></h1>
 												<div class="aux_links" >
 													<a href="#" class="toggle_artist">Slideshow</a>
 													<a href="<?php echo site_url(); ?>/artists">Back to Artists</a>
@@ -53,7 +53,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 																	$info = get_field('information', $slide['ID']);
 																	echo $info ? $info : '';
 																?> 
-																<?php if(!get_field('hide_inquire_link', $slide['ID'])){ echo '<p><a href="#">INQUIRE &gt;</a></p>'; }?>
+																<?php if(!get_field('hide_inquire_link', $slide['ID'])){ 
+
+
+																	echo '<p><a href="'. get_home_url() .'/art-inquiry/?artistid='. get_the_ID() .'&workid='. $slide['ID'] .'">INQUIRE &gt;</a></p>'; 
+
+
+																}?>
 															</section> 
 														</div>
 													<?php 

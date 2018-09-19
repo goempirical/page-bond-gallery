@@ -7,10 +7,17 @@ h6,
 p,
 li,
 .owl-counter,
-.aux_links a {
+.aux_links a,
+form,
+label,
+input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+.container div.wpforms-container-full .wpforms-form .wpforms-field-label {
+  font-weight: normal;
 }
 
 h1 {
@@ -69,7 +76,7 @@ a {
   color: $blue;
 }
 
-p {
+p, label, input {
   font-family: $body-font;
   font-size: 16px; 
   line-height: 21px; 
