@@ -10035,13 +10035,13 @@ nav.navbar {
   #navbarNavDropdown li ul.dropdown-menu {
     background-color: rgba(255, 255, 255, 0.7);
     border: none;
-    text-transform: capitalize;
     padding-top: 8px;
     margin: 0px;
     border-radius: 0; }
     #navbarNavDropdown li ul.dropdown-menu li a {
       padding: 0px 11px;
-      text-align: center; }
+      text-align: center;
+      text-transform: capitalize; }
       @media (min-width: 600px) {
         #navbarNavDropdown li ul.dropdown-menu li a {
           text-align: initial; } }
@@ -10053,7 +10053,8 @@ nav.navbar {
     font-size: 16px;
     line-height: 21px;
     letter-spacing: 0.65px;
-    color: #666666; }
+    color: #666666;
+    text-transform: uppercase; }
   .navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle {
     color: var(--grey-active); }
 
