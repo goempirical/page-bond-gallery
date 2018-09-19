@@ -43,14 +43,12 @@ $image_attributes = wp_get_attachment_image_src( $work, 'slider' );
 							</div>
 							<div class="col-md-7">
 								<?php the_field('form_embed'); ?>
-								<div id="artwork-data"><?php
-										echo get_the_title($artist);
-
-										$info = get_field('information', $work);
-										echo ' <a href="'. $image_attributes[0] .'">';
-										echo $info ? $info : '<p><em>Untitled</em></p>';
-										echo '</a>';
-									?></div>
+								<div id="artwork-data">
+									<p><?php echo get_the_title($artist); ?></p>
+									<?php $info = get_field('information', $work);
+									echo $info ? $info : '<p><em>Untitled</em></p>'; ?>
+									<p><?php echo '( '. $image_attributes[0] .' )'; ?></p>
+								</div>
 							</div>
 						</div>
 					<?php endwhile; // end of the loop. ?>
