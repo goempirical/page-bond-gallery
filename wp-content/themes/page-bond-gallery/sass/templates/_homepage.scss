@@ -23,7 +23,7 @@
 
   .banner-info {
     margin-top:8px;
-    margin-bottom:60px;
+    margin-bottom: $block-space*2;
 
     a {
       color:$grey-color;
@@ -32,10 +32,10 @@
 }
 
 section.wrapper-recents {
-  margin-top: 53px;
+  margin-top: 0;
 
   article {
-
+    margin-bottom: $block-space;
 
     a {
       color: $blue;
@@ -50,6 +50,7 @@ section.wrapper-recents {
     p {
       max-width: 392px;
     }
+
   }
 }
 
