@@ -10004,17 +10004,6 @@ article.hentry {
 .row.space__between > div[class^="col"] {
   margin-bottom: 30px; }
 
-.toggle__content {
-  opacity: 0;
-  transition: opacity 1ms linear;
-  pointer-events: none;
-  height: 0; }
-  .toggle__content.active {
-    opacity: 1;
-    transition: opacity 1s ease;
-    pointer-events: initial;
-    height: auto; }
-
 nav.navbar {
   padding: 28px 35px 50px; }
 
@@ -10487,6 +10476,18 @@ section.wrapper-recents {
       background-color: transparent; }
     .nav-tabs .nav-link:first-child {
       padding-left: 0px; }
+
+.toggle__content {
+  opacity: 0;
+  transition: opacity 1ms linear;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden; }
+  .toggle__content.active {
+    opacity: 1;
+    transition: opacity 1s ease;
+    pointer-events: initial;
+    height: auto; }
 
 .page-template-contact-template iframe {
   height: 570px; }

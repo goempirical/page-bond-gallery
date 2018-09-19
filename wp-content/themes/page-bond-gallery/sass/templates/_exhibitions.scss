@@ -85,3 +85,18 @@
       }
     }
 }
+
+.toggle__content {
+  opacity:0;
+  transition: opacity 1ms linear;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+
+  &.active {
+    opacity:1;
+    transition: opacity $anim-dur/2 ease;
+    pointer-events: initial;
+    height: auto;
+  }
+}
