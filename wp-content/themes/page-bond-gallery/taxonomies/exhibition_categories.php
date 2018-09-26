@@ -17,6 +17,7 @@
       array("exhibitions"),
       array(
         "hierarchical" => true,
+        'show_admin_column' => true,
         "label" => "Exhibition Categories",
         "labels" => $labels,
         "rewrite" => true
