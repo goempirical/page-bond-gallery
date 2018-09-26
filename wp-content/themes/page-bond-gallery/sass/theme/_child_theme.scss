@@ -320,12 +320,10 @@ article.hentry {
       width: initial;
       margin: 0 auto;
 
-      @media (min-width: $bp-med) {
         width: auto;
         margin: 0 auto;
-        height: calc( 95vh - 440px );
-        max-width: none;
-      }
+        max-height: calc( 95vh - 440px );
+        max-width: 100%;
     }
 
     section {

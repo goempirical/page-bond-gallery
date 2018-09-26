@@ -9981,13 +9981,11 @@ article.hentry {
     pointer-events: none; }
   .owl-carousel .owl-item.no__full img.slide-image {
     width: initial;
-    margin: 0 auto; }
-    @media (min-width: 992px) {
-      .owl-carousel .owl-item.no__full img.slide-image {
-        width: auto;
-        margin: 0 auto;
-        height: calc( 95vh - 440px);
-        max-width: none; } }
+    margin: 0 auto;
+    width: auto;
+    margin: 0 auto;
+    max-height: calc( 95vh - 440px);
+    max-width: 100%; }
   .owl-carousel .owl-item section {
     margin-top: 20px; }
     .owl-carousel .owl-item section p {
@@ -10013,7 +10011,9 @@ nav.navbar {
   margin-bottom: 2px;
   max-width: 70%; }
   .navbar-brand img {
-    width: 100%; }
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; }
 
 #navbarNavDropdown {
   justify-content: flex-end; }
@@ -10047,6 +10047,10 @@ nav.navbar {
   .navbar-light .navbar-nav .current-menu-ancestor a.nav-link.dropdown-toggle {
     color: var(--grey-active); }
 
+#wrapper-navbar .navbar-expand-md > .container {
+  padding-right: 15px;
+  padding-left: 15px; }
+
 .navbar-expand-md .navbar-nav .nav-link {
   padding: 0 11px;
   line-height: 1.125;
@@ -10054,7 +10058,13 @@ nav.navbar {
   padding-top: 24px; }
 
 .navbar-toggler {
-  border: 0; }
+  border: 0;
+  margin-top: 23px;
+  width: 100%;
+  border-top: 0.5px solid #aaaaaa;
+  padding-top: 20px;
+  border-radius: 0;
+  font-size: 1em; }
 
 .navbar > .container,
 .navbar > .container-fluid {
@@ -10082,6 +10092,9 @@ nav.navbar {
   display: flex;
   align-items: flex-start;
   padding-top: 18px; }
+  @media (max-width: 1200px) {
+    .navbar .search {
+      justify-content: center; } }
   .navbar .search .search-icon {
     transition: max-width 0.5s ease-out, opacity 0.5s ease-out;
     max-width: 3em;
@@ -10481,8 +10494,7 @@ section.wrapper-recents {
   opacity: 0;
   transition: opacity 1ms linear;
   pointer-events: none;
-  height: 0;
-  overflow: hidden; }
+  height: 0; }
   .toggle__content.active {
     opacity: 1;
     transition: opacity 1s ease;

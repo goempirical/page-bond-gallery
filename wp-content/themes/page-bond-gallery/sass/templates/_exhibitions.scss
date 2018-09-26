@@ -91,7 +91,6 @@
   transition: opacity 1ms linear;
   pointer-events: none;
   height: 0;
-  overflow: hidden;
 
   &.active {
     opacity:1;

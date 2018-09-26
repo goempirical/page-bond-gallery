@@ -11,6 +11,8 @@ nav.navbar{
 
   img {
     width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 
@@ -67,6 +69,11 @@ nav.navbar{
   }
 }
 
+#wrapper-navbar .navbar-expand-md>.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .navbar-expand-md .navbar-nav .nav-link{
   padding: 0 11px;
   line-height: 1.125;
@@ -75,7 +82,13 @@ nav.navbar{
 }
 
 .navbar-toggler {
-  border:0;
+  border:0;    
+  margin-top: 23px;
+  width: 100%;
+  border-top: .5px solid $grey-border;
+  padding-top: 20px;
+  border-radius: 0;
+  font-size: 1em;
 }
 
 .navbar>.container, 
@@ -113,6 +126,10 @@ nav.navbar{
   display: flex;
   align-items: flex-start;
   padding-top: 18px;
+
+  @media (max-width: $bp-large) {
+    justify-content: center;
+  }
 
   .search-icon {
     transition: max-width $anim-dur/4 ease-out, opacity $anim-dur/4 ease-out;
