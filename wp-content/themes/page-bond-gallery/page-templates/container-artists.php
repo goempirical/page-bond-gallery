@@ -21,7 +21,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					?>
 
 						<script>
-								// {ID} is any unique name, example: b1, q9, qq, misha etc, it should be unique
 								var posts_artists = '<?php echo serialize( $query_artists->query_vars ) ?>',
 								    current_page_artists = <?php echo $query_artists->query_vars['paged'] ?>,
 								    max_page_artists = <?php echo $query_artists->max_num_pages ?>,
