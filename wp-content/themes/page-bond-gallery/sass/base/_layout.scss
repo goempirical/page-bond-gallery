@@ -87,7 +87,7 @@ iframe {
   }
 
   p {
-    margin: 0 0 4px;
+    margin: 0 0 16px;
   }
 
   p + h2, 
@@ -104,6 +104,12 @@ iframe {
 
     &:hover {
       color:$grey-dark;
+    }
+  }
+
+  .policy-section {
+    p, h5, h6 {
+      font-weight: 700!important;
     }
   }
 }

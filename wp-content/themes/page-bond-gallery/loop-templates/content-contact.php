@@ -36,8 +36,7 @@
 								<div class="acf-map">
 									<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 								</div>
-						    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUJ2B05OTiOmiPpaGLNK8_BaXeFXiATA"
-						    async defer></script>
+						    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUJ2B05OTiOmiPpaGLNK8_BaXeFXiATA"></script>
 							
 						<script type="text/javascript">
 							(function($) {

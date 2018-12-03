@@ -60,12 +60,12 @@ function pb_ajax_artists() {
 add_action( 'wp_ajax_artists', 'pb_ajax_artists' );
 add_action( 'wp_ajax_nopriv_artists', 'pb_ajax_artists' );
 
-function google_map_api() {
+function pbg_google_map_api() {
     $api['key'] = 'AIzaSyBfUJ2B05OTiOmiPpaGLNK8_BaXeFXiATA';
         return $api;
 }
 
-add_filter('acf/fields/google_map/api', 'google_map_api');
+add_filter('acf/fields/google_map/api', 'pbg_google_map_api');
 
 if( function_exists('acf_add_options_page') ) {
     
