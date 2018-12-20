@@ -1,0 +1,252 @@
+
+nav.navbar{ 
+  padding: 28px 35px 50px; 
+}
+
+.navbar-brand { 
+  padding: 0; 
+  display: grid; 
+  margin-bottom: 2px;
+  max-width: 70%;
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+#navbarNavDropdown {
+  justify-content: flex-end;
+
+  li {
+    &:last-child {
+       & > a {
+         padding-right: 0px;
+       }
+    }
+
+    a {
+      &::after  {
+        content: none;
+      }
+    }
+
+    ul.dropdown-menu {
+      background-color: rgba(255,255,255,.7);
+      border: none;
+      padding-top: 8px;
+      margin: 0px;
+      border-radius: 0;
+
+      li a {
+        padding: 0px 11px;
+        text-align: center;
+        text-transform: capitalize;
+
+        @media (min-width: $bp-small) {
+          text-align: initial;
+        }
+      }
+    }
+  }
+}
+
+.navbar-light .navbar-nav {
+  text-align: center;
+
+  .nav-link {
+    font-family: $body-font;
+    font-size: 16px; 
+    line-height: 21px; 
+    letter-spacing: 0.65px; 
+    color: $grey-color;
+    text-transform: uppercase;
+  }
+
+  .current-menu-ancestor a.nav-link.dropdown-toggle {
+    color: $navbar-light-active-color;
+  }
+}
+
+#wrapper-navbar .navbar-expand-md>.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.navbar-expand-md .navbar-nav .nav-link{
+  padding: 0 11px;
+  line-height: 1.125;
+  vertical-align: baseline;
+  padding-top: 24px;
+}
+
+.navbar-toggler {
+  border:0;    
+  margin-top: 23px;
+  width: 100%;
+  border-top: .5px solid $grey-border;
+  padding-top: 20px;
+  border-radius: 0;
+  font-size: 1em;
+}
+
+.navbar>.container, 
+.navbar>.container-fluid {
+  flex-direction: column;
+}
+
+@media (max-width: $bp-small) {
+  .navbar-brand {
+    width:100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: $bp-large) {
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: $bp-large) {
+  .navbar>.container, 
+  .navbar>.container-fluid {
+    align-items: baseline;
+    flex-direction: row;
+  }
+
+  .container {
+    max-width: 1190px; 
+  } 
+}
+
+.navbar .search {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 18px;
+
+  @media (max-width: $bp-large) {
+    justify-content: center;
+  }
+
+  .search-icon {
+    transition: max-width $anim-dur/4 ease-out, opacity $anim-dur/4 ease-out;
+    max-width: 3em;
+    margin-top: 7px;
+  }
+
+  .searchform {
+    max-width:0;
+    overflow: hidden;
+    box-sizing: border-box;
+    opacity:0;
+    transition: max-width $anim-dur/4 ease-out, opacity $anim-dur/4 ease-out;
+    height: 30px;
+
+    .searchsubmit {
+      background-color: transparent;
+    }
+
+    &.show-form {
+      opacity: 1;
+      max-width: 160px;
+
+      + a.search-icon {
+        opacity:0;
+        max-width:0;
+      }
+    }
+  }
+}
+
+.search .input-group-append {
+  padding-top: .25em;
+}
+
+.searchform {
+  @include font-smoothing;
+  border: 1px solid $grey-border;
+  display: flex;
+  align-items: center;
+  padding: 0.125em 0.25em;
+
+  input {
+    border: none!important;
+    padding: 0;
+    letter-spacing: .65px;
+    color: $grey-color;
+    text-transform: none!important;
+  }
+}
+
+.search-icon,
+.searchsubmit,
+#searchsubmit {
+  background: url('../img/search.svg');
+  display: block;
+  width: 1.15em;
+  height: 1.15em;
+  overflow: hidden;
+  text-indent: -999em;
+}
+
+.searchsubmit { 
+  display: inline;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.search-icon + .searchform {
+  opacity: 0;
+  transition: opacity $anim-dur/4 ease;
+}
+
+
+@media (max-width: $bp-large) {
+  .wrapper-navbar + .wrapper {
+    padding-top: 0;
+  }
+}
+
+.head_content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: $block-space;
+
+  @media (min-width: $bp-med) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+    .aux_links {
+
+      & > a {
+        color: $grey-color;
+
+        &.active {
+          color: $grey-active;
+        }
+        &:hover {
+          color: $grey-active;
+        }
+        &:not(:last-child) {
+          padding-right: 12px;
+        }
+      }
+    }
+}
+
+.aux_links {
+  margin-bottom: 9px;
+}
+
+.site-info {
+  row > * {
+    padding-left: 0px;
+  }
+}

@@ -1,0 +1,207 @@
+body {
+  color: $grey-color;
+  a:hover { text-decoration: none; }
+  ul { list-style: none; padding-left: unset;}
+  letter-spacing: .65px;
+}
+
+@media (min-width: $bp-large) {
+  .container {
+    max-width: 1600px;
+  }
+
+  nav .container,
+  .container.home-gallery {
+    max-width: 2000px;
+  }
+}
+
+.row__space__bottom {
+  padding-bottom: 47.5px; 
+}
+
+iframe {
+  width: 100%;
+}
+
+#page > .wrapper {
+  padding-top: 0;
+  padding: 0 35px 0;
+}
+
+/* Artist and Exhibit Grids */
+
+.grid-item {
+  margin-bottom: 50px;
+
+  .img-wrap {
+    position: relative;
+    height: 0;
+    padding-bottom: 67.11%;
+    background: #fafafa;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      max-width: none;
+      width: 100%;
+
+      @supports ( object-fit: cover ) {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        top: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  img {
+    max-width: none;
+    height: auto;
+    width: 100%;
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $grey-color;
+  }
+
+  p {
+    margin: 4px 0 0;
+  }
+}
+
+.page-content {
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0 0 16px;
+  }
+
+  p + h2, 
+  p + h3, 
+  p + h4, 
+  p + h5, 
+  p + h6 {
+    margin-top:20px;
+  }
+
+
+  a {
+    color: $blue;
+
+    &:hover {
+      color:$grey-dark;
+    }
+  }
+
+  .policy-section {
+    p, h5, h6 {
+      font-weight: 700!important;
+    }
+  }
+}
+
+#right-sidebar {
+  margin-bottom: 50px;
+}
+
+.loadmore_artists {
+  display: block;
+  text-align: center;
+  outline: none;
+  margin-bottom: 50px;
+}
+
+.policy-section {
+  padding-bottom: 50px;
+}
+
+@media (min-width: $bp-med) {
+  .grid-container,
+  .main-content-area {
+    padding-right: 20px;
+    padding-left: 20px;
+
+    .row {
+      margin-right: -20px;
+      margin-left: -20px;
+
+      &.-inner {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+  }
+
+  .main-content-area .content-area,
+  .main-content-area .widget-area,
+  .grid-item {
+    padding-right: 20px;
+    padding-left: 20px;
+
+    .single-artists & {
+      margin-top:30px;
+      margin-bottom:50px;
+    }
+  }
+}
+
+@media (min-width: $bp-large) {
+  .grid-container,
+  .main-content-area {
+    padding-right: 40px;
+    padding-left: 40px;
+
+    .row {
+      margin-right: -40px;
+      margin-left: -40px;
+
+      &.-inner {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+  }
+
+  .main-content-area .content-area,
+  .main-content-area .widget-area,
+  .grid-item {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .main-content-area .widget-area {
+    padding-left:100px;
+  }
+}
+
+.site-main {
+  width: 100%;
+}
+
+.blogroll-footer {
+  a {
+    color: $grey-color;
+
+    &:hover {
+      color: $grey-active;
+    }
+  }
+}
+
+div.wpforms-container-full:last-child {
+  margin-bottom: 0;
+}

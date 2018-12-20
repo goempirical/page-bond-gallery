@@ -25,7 +25,7 @@
           'query_var' => true,
           'rewrite' => true,
           'capability_type' => 'post',
-          'hierarchical' => false,
+          'hierarchical' => true,
           'menu_position' => 5,
           'supports' => array('title', 'editor', 'thumbnail'),
           'rewrite' => array('slug' => 'exhibitions', 'with_front' => FALSE)

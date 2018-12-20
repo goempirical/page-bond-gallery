@@ -11,52 +11,61 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="full-width-page-wrapper">
+<?php
+	$query  = new WP_Query(array(
+		'post_type' => 'exhibitions',
+		'posts_per_page' => -1,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'exhibition_categories',
+				'field' => 'slug',
+				'terms' => 'upcoming'
+			)
+		)
+	));
+?>
 
+<main class="wrapper" id="full-width-page-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+		<div class="row justify-content-center">
+			<div class="col-md-11 grid-container">	
+					
+			<?php
+				while ( $query->have_posts() ) : $query->the_post();
+				$exhibition_content = get_field('exhibition_content'); 
+			?>
 
-		<div class="row">
+				<div id="gallery-title" class="head_content box-stroke__bottom">
+					<div>
+						<h1 class="gallery-title"><?php the_title(); ?></h1>
+						<p><?php echo $exhibition_content['date_text']; ?></p> 
+					</div>
 
-			<div class="col-md-12 content-area" id="primary">
+					<div class="aux_links" >
+						<a href="<?php the_permalink(); ?>" >View Exhibition</a>
+					</div>
+				</div>
 
-				<main class="site-main" id="main" role="main">
+				<div class="row">			
+				<?php 
+					if( $exhibition_content['exhibition_images'] ) : 
+						$i = 1;
+						foreach( array_slice($exhibition_content['exhibition_images'], 0, 6) as $slide ) : 
+				?>
+						<div class="col-md-4 grid-item"> 
+							<a href="<?php the_permalink(); ?>" class="gallery-image"><img src="<?php echo $slide['sizes']['thumbnail'] ?>"></a>
+						</div>
+				<?php 
+						$i++;
+						endforeach;
+					endif; 
+				?>
+			</div>	
 
-                    <?php
-                        $query  = new WP_Query(array(
-                            'post_type' => 'exhibitions',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'exhibition_categories',
-                                    'field' => 'slug',
-                                    'terms' => 'upcoming'
-                                )
-                            )
-                        ));
-                    ?>
+			<?php endwhile; ?>
 
-					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-						<?php get_template_part( 'loop-templates/content-artist', 'page' ); ?>
-
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-
-							comments_template();
-
-						endif;
-						?>
-
-					<?php endwhile; // end of the loop. ?>
-
-				</main><!-- #main -->
-
-			</div><!-- #primary -->
-
-		</div><!-- .row end -->
-
-	</div><!-- Container end -->
-
-</div><!-- Wrapper end -->
+		</div>
+	</div>
+</main><!-- #main -->
 
 <?php get_footer(); ?>

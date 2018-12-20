@@ -29,35 +29,26 @@
 
 	</header><!-- .entry-header -->
 
-<?php 
-	$my_content = get_field('news_content');
-	while ( have_rows('news_content') ) : the_row();
+	<?php 
+		$video = get_field('video');
+		if ( $video ) { 
+	?>
+				<div class="videoWrapper">
+					<?php echo $video; ?>
+				</div>
+	<?php
+		} elseif ( has_post_thumbnail() ) {
+			the_post_thumbnail('large');
+		}
+	?>
 
-		$sub_field = get_sub_field('news_post_embed');
-		
-			if ( have_rows('news_post_embed') ) {
-				
-				while ( have_rows('news_post_embed') ) : the_row();
-
-					$layout = get_row_layout();
-
-						if ( $layout === 'select_video' ) { 
-?>
-							<div class="videoWrapper">
-								<?php echo get_sub_field('video'); ?>
-							</div>
-<?php
-						} else {
-							echo  wp_get_attachment_image( get_sub_field('image')['ID'], 'post' );
-						}
-				endwhile;
-			}
-
-	endwhile;
-?>
-				
+	<?php 
+		$content = get_the_content();
+		$trimmed_content = wp_trim_words(  $content , 48, '...' );
+	?>
 
 	<div class="entry-content">
-		<p> <?php echo wp_trim_words(  get_the_content() , 30, '...' ); ?> </p>
+		<p><?php echo $trimmed_content; ?></p>
+		<p><?php if(substr_count($content, ' ') > 46) echo '<a class="read-more" href="'.get_permalink().'">READ MORE &gt;</a>'; ?></p>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

@@ -1,0 +1,101 @@
+/* artists and exhibitions */
+
+
+.tab-content, .height_stand {
+  min-height: $block-space;
+}
+
+.tab-content {
+	margin-bottom: $block-space;
+	
+  & > #artist_pe {
+    ul > li {
+      a {
+        h2 { 
+          margin-bottom: unset;
+          color: $grey-color;
+          text-transform: uppercase;
+        }
+        &:hover > h2 {
+          color: $grey-active;
+        }
+      }
+    }
+
+    ul > li:not(:last-child) {
+      margin-bottom: 34px;
+    }
+  }
+  > div {
+	  margin-top: 16px;
+	}
+}
+
+.tab-content > div {
+  margin-top: $block-space - 12;
+}
+
+#artist_li a {
+  color: $grey-color;
+
+  &:hover {
+    color:$grey-active;
+  }
+}
+
+.tab-pane {
+	ul, p, li {
+		&:last-child {
+			padding-bottom:0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.nav-tabs {
+    border-bottom: none;
+    padding-top: 0;
+
+    .nav-item {
+      &.flex-right {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        .nav-link {
+          padding-right: 0px;
+          min-width: 50px;
+        }
+      }
+    }
+  
+    .nav-link {
+      color: $grey-color;
+      border: none !important;
+      padding-right: 1.5em;
+      
+      &.active, &:hover {
+        color: $grey-active;
+        border: inherit;
+        background-color: transparent;
+      }
+
+      &:first-child {
+        padding-left: 0px;
+      }
+    }
+}
+
+.toggle__content {
+  opacity:0;
+  transition: opacity 1ms linear;
+  pointer-events: none;
+  height: 0;
+
+  &.active {
+    opacity:1;
+    transition: opacity $anim-dur/2 ease;
+    pointer-events: initial;
+    height: auto;
+  }
+}

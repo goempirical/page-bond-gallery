@@ -13,18 +13,21 @@
     src: local('Omnes Light'), url('../fonts/Omnes/omnes-light-webfont.woff') format('woff');
 }*/
 
-$body-font: 'omnes-pro';
-$title-font: 'omnes-pro';
+$body-font: 'omnes-pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$title-font: 'omnes-pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $grey-dark:  #262626;
-$grey-color:  #4d4d4d;
-$grey-headings:  #6a6a6a;
-$grey-active:  #999999;
+$grey-color:  #666666;
+$grey-headings:  #777777;
+$grey-active:  #a9a9a9;
 $grey-border:  #aaaaaa;
-$blue: #003399;
+$blue: #0033cc;
 
 
 $bp-large: 1200px;
 $bp-med: 992px;
+$bp-small: 600px;
+
+$block-space: 50px;
 
 $anim-dur: 2s;
 
@@ -48,3 +51,20 @@ $headings-font-weight: 200 !important;
 $navbar-light-color: $primary;
 $navbar-light-active-color: var(--grey-active);
 $navbar-light-hover-color: var(--grey-active);
+
+
+@mixin font-sizing($fsize, $lheight) {
+    font-size: $fsize/16 * 1em;
+    line-height: $lheight/$fsize;
+}
+
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

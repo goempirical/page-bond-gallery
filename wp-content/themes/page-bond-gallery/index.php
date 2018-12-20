@@ -26,14 +26,14 @@ $container  = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row justify-content-center">
 
-			<div class="col-md-10">
+			<div class="col-md-11 main-content-area">
 			
-			<div class="aux_content box-stroke adding__space adding__padding__top">
+			<div class="aux_content">
 			
-			<div class="row">
+			<div class="row justify-content-between">
 
-			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+
+			<div class="col-md-8 col-xl-7 content-area" id="primary">
 
 			<main class="site-main" id="main">
 
@@ -83,10 +83,13 @@ $container  = get_theme_mod( 'understrap_container_type' );
 				'after_page_number'  => ''
 			);
 			
-			understrap_pagination($args); 
-		 
-				//wp_link_pages( $defaults );?>
-			
+			?>
+			<div class="blogroll-footer d-flex justify-content-between"> 
+			<?php
+			previous_posts_link( '&lt; Previous' );
+			next_posts_link( 'Next &gt;' );
+		 	?>
+		 	</div>
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->

@@ -4,47 +4,26 @@
  *
  * @package understrap
  */
-
+$artist_content = get_field('artist_content');
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
 	<header class="entry-header">
-
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-		'</a></h2>' ); ?>
-
-		<?php //if ( 'exhibitions' == get_post_type() ) : ?>
-
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
-
-		<?php //endif; ?>
+		<?php 
+			the_title( 
+				sprintf( 
+					'<a href="%s" rel="bookmark" ><h2>Artist: ', 
+					esc_url(get_permalink()) 
+				),
+				'</h2></a>' 
+			); 
+		?>
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	<div class="entry-content">
-
-		<?php
-		the_excerpt();
-		?>
-
-		<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-			'after'  => '</div>',
-		) );
-		?>
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
+	<a href="<?php the_permalink(); ?>">
+		<div class="img-wrap">
+			<img src="<?php echo $artist_content['artist_featured_image']['sizes']['large'] ?>" alt="<?php echo the_title();?>">
+		</div>
+	</a>
 </article><!-- #post-## -->

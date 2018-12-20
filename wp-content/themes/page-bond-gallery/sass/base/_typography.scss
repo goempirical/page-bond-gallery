@@ -1,0 +1,93 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+.owl-counter,
+.aux_links a,
+form,
+label,
+input {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.container div.wpforms-container-full .wpforms-form .wpforms-field-label {
+  font-weight: normal;
+}
+
+h1 {
+  font-family: $title-font;
+  font-size: 25px; 
+  line-height: 1; 
+  letter-spacing: 0.6px;  
+  color: $grey-headings;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-family: $title-font;
+  font-size: 19px; 
+  line-height: 25px;
+  letter-spacing: 0.6px;
+  color: $grey-headings;
+  margin-bottom: 0px;
+}
+
+h3, h4 {
+  color: $grey-headings;
+}
+
+h3, h4, h5, h6 {
+  letter-spacing: 0.6px;
+}
+
+.head_content h1 {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+h1.gallery-title,
+h1.page-title,
+h1.entry-title {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+
+  & + p {
+    margin-bottom: 10px;
+  }
+}
+
+.home h1{
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+
+
+a {
+  font-size: 16px; 
+  line-height: 21px; 
+  letter-spacing: 0.65px;  
+  color: $blue;
+}
+
+p, label, input {
+  font-family: $body-font;
+  font-size: 16px; 
+  line-height: 21px; 
+  letter-spacing: 0.65px; 
+  color: $grey-color;
+}
+
+//  Icon Alter Spaces
+
+.fa:not(:last-of-type) {padding-right: 10px}
+
+.widget_categories > h3 {
+  display: none;
+}
