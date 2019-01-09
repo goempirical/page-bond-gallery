@@ -33,7 +33,7 @@ $container  = get_theme_mod( 'understrap_container_type' );
 			<div class="row justify-content-between">
 
 
-			<div class="col-md-8 col-xl-7 content-area" id="primary">
+			<div class="col-md-8 col-xl-7 content-area test" id="primary">
 
 			<main class="site-main" id="main">
 
@@ -93,7 +93,7 @@ $container  = get_theme_mod( 'understrap_container_type' );
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
-		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+		<?php get_sidebar( 'right' ); ?>
 				</div>
 			</div>
 		</div> <!-- .col-md-10 -->

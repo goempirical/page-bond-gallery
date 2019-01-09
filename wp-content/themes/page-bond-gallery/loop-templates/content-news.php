@@ -44,11 +44,11 @@
 
 	<?php 
 		$content = get_the_content();
-		$trimmed_content = wp_trim_words(  $content , 48, '...' );
+		$trimmed_content = wp_trim_words(  $content , 68, '...' );
 	?>
 
 	<div class="entry-content">
 		<p><?php echo $trimmed_content; ?></p>
-		<p><?php if(substr_count($content, ' ') > 46) echo '<a class="read-more" href="'.get_permalink().'">READ MORE &gt;</a>'; ?></p>
+		<p><?php if(substr_count($content, ' ') > 66) echo '<a class="read-more" href="'.get_permalink().'">READ MORE &gt;</a>'; ?></p>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
