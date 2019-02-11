@@ -51,8 +51,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 							<?php else : ?>
 
-								<div class="aux_content box-stroke adding__space adding__padding__top">
-									<div class="row">
 									<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 							<?php endif; ?>
@@ -67,8 +65,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 					 	</div>
 					</div><!-- #primary -->
 
-					<!-- Do the right sidebar check -->
-					<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+					<?php get_sidebar( 'right' ); ?>
 
 				</div> <!-- .row -->
 			</div>
