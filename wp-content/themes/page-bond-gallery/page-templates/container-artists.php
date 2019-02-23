@@ -52,7 +52,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<?php
 
 							if (  $query_artists->max_num_pages > 1 )
-								echo '<a href="#" class="loadmore_artists">More Artists</a>';
+								echo '<a href="#" class="loadmore_artists">  </a>';
 
 						endif;
 
