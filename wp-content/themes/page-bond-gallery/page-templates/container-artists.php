@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div>
 					<?php 
 						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-						$query_artists = new WP_Query(array('post_type' => 'artist', 'order' =>  'ASC', 'orderby' => 'menu_order', 'posts_per_page' => 16, 'paged' => $paged ));
+						$query_artists = new WP_Query(array('post_type' => 'artist', 'order' =>  'ASC', 'orderby' => 'menu_order', 'posts_per_page' => 12, 'paged' => $paged ));
 					?>
 
 						<script>
