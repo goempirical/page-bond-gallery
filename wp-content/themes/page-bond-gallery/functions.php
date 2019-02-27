@@ -37,7 +37,7 @@ function theme_enqueue_styles() {
 
 function pb_ajax_artists() {
     // prepare our arguments for the query
-    $args = array('post_type' => 'artist', 'order' =>  'ASC', 'orderby' => 'menu_order', 'posts_per_page' => 12, 'paged' => $paged );
+    $args = array('post_type' => 'artist', 'order' =>  'ASC', 'orderby' => 'menu_order', 'posts_per_page' => 100, 'paged' => $paged );
     $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
     $args['post_status'] = 'publish';
 

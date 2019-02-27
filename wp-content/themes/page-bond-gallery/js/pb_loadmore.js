@@ -17,10 +17,11 @@ jQuery(function($){
                 //$lmButton.text('Loading...'); // change the button text, you can also add a preloader image
             },
             success : function( data ){
+                // console.log('ajax');
+                // console.log(data);
+                $('#artist-grid').append(data);
+                current_page_artists++;
                 if( data ) { 
-                    $('#artist-grid').append(data);
-                    //$lmButton.text( 'More Artists' ); // insert new posts
-                    current_page_artists++;
                     pbLoadMore();
                 } else {
                     $lmButton.remove(); // if no data, remove the button as well
